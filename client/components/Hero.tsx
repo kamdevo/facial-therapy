@@ -153,7 +153,7 @@ export default function Hero() {
                 className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg"
               >
                 <div className="text-center">
-                  <Star className="text-gold-400 mx-auto mb-1" size={24} />
+                  <Star className="text-bronze-400 mx-auto mb-1" size={24} />
                   <p className="font-poppins text-xs font-semibold text-foreground">
                     5 años
                   </p>
@@ -177,12 +177,12 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-nude-300 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-sand-300 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-blush-400 rounded-full mt-2"
+            className="w-1 h-3 bg-teal-400 rounded-full mt-2"
           ></motion.div>
         </motion.div>
       </motion.div>
