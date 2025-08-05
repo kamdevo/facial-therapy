@@ -241,30 +241,31 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200"
-            >
-              <h4 className="font-poppins font-semibold text-foreground text-lg mb-4">
-                Nuestra ubicación
-              </h4>
-              <div className="aspect-video bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={48} className="text-teal-500 mx-auto mb-2" />
-                  <p className="font-poppins text-foreground/80">
-                    Google Maps integrado
-                  </p>
-                  <p className="font-poppins text-sm text-foreground/60">
-                    Av. Principal 123, Plaza Beauty
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
+
+        {/* Expanded Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Fácil de{' '}
+              <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
+                encontrar
+              </span>
+            </h3>
+            <p className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto">
+              Ubicados estratégicamente en el corazón de la ciudad para tu comodidad.
+              Con excelente acceso al transporte público y estacionamiento disponible.
+            </p>
+          </div>
+
+          <GoogleMap isInView={isInView} />
+        </motion.div>
       </div>
     </section>
   );
