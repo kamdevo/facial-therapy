@@ -160,7 +160,7 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-16"
         >
           <p className="font-poppins text-muted-foreground mb-6">
