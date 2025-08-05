@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import GoogleMap from './GoogleMap';
 
 export default function Contact() {
   const ref = useRef(null);
