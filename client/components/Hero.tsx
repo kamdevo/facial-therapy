@@ -74,18 +74,23 @@ export default function Hero() {
               Bienvenida a tu oasis de belleza
             </motion.p>
             
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
+              className="mb-6"
             >
-              Realza tu{' '}
-              <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
-                belleza natural
-              </span>
-              {' '}con Facial Therapy
-            </motion.h1>
+              <SparklesText
+                className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
+                colors={{
+                  first: "#14b8a6", // teal-500
+                  second: "#d4943a", // bronze-500
+                }}
+                sparklesCount={15}
+              >
+                Realza tu belleza natural con Facial Therapy
+              </SparklesText>
+            </motion.div>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
