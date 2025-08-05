@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-nude-50 to-blush-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-sand-50 to-teal-50"></div>
       
       {/* Floating Elements */}
       <motion.div
@@ -20,7 +20,7 @@ export default function Hero() {
         }}
         className="absolute top-20 left-10 opacity-20"
       >
-        <Sparkles size={40} className="text-gold-400" />
+        <Sparkles size={40} className="text-bronze-400" />
       </motion.div>
       
       <motion.div
@@ -36,7 +36,7 @@ export default function Hero() {
         }}
         className="absolute top-32 right-20 opacity-20"
       >
-        <Star size={32} className="text-blush-400" />
+        <Star size={32} className="text-teal-400" />
       </motion.div>
 
       <motion.div
@@ -52,7 +52,7 @@ export default function Hero() {
         }}
         className="absolute bottom-32 left-1/4 opacity-15"
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-nude-300 to-cream-300 rounded-full"></div>
+        <div className="w-16 h-16 bg-gradient-to-br from-sand-300 to-cream-300 rounded-full"></div>
       </motion.div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -68,7 +68,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="font-poppins text-blush-500 font-medium text-lg mb-4"
+              className="font-poppins text-teal-600 font-medium text-lg mb-4"
             >
               Bienvenida a tu oasis de belleza
             </motion.p>
