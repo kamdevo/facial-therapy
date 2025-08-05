@@ -49,13 +49,13 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Nuestros Servicios
@@ -64,7 +64,7 @@ export default function Services() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Tratamientos que{' '}
@@ -76,7 +76,7 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Cada tratamiento está diseñado para brindar resultados excepcionales 
@@ -91,7 +91,7 @@ export default function Services() {
               key={service.title}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
               className="group"
             >
