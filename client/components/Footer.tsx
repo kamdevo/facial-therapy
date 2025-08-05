@@ -38,7 +38,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="lg:col-span-1"
           >
             <Link to="/" className="flex items-center space-x-2 mb-6">
@@ -68,7 +68,7 @@ export default function Footer() {
                   href={social.href}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
                   aria-label={social.label}
@@ -83,7 +83,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
           >
             <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
               Enlaces Rápidos
@@ -106,7 +106,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
               Nuestros Servicios
@@ -126,7 +126,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
           >
             <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
               Información de Contacto
