@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 2, duration: 0.5, type: "spring" }}
+      transition={{ delay: 0.8, duration: 0.4, type: "spring" }}
       className="fixed bottom-6 right-6 z-50"
     >
       <motion.a
