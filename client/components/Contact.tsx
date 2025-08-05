@@ -107,7 +107,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-8 shadow-2xl border border-nude-200"
+            className="bg-white rounded-3xl p-8 shadow-2xl border border-sand-300"
           >
             <h3 className="font-playfair text-3xl font-bold text-foreground mb-6">
               Reserva tu cita
