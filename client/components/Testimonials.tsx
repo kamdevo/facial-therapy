@@ -57,7 +57,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-poppins text-blush-500 font-medium text-lg mb-4"
+            className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Testimonios
           </motion.p>
@@ -69,7 +69,7 @@ export default function Testimonials() {
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Lo que dicen{' '}
-            <span className="bg-gradient-to-r from-blush-400 to-gold-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
               nuestras clientas
             </span>
           </motion.h2>
@@ -93,7 +93,7 @@ export default function Testimonials() {
         >
           <div className="relative bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-nude-200">
             {/* Quote Icon */}
-            <Quote size={48} className="text-blush-300 mb-6" />
+            <Quote size={48} className="text-teal-300 mb-6" />
             
             {/* Testimonial Content */}
             <motion.div
@@ -114,7 +114,7 @@ export default function Testimonials() {
                 ))}
               </div>
               
-              <p className="font-poppins text-sm text-blush-500 font-medium mb-2">
+              <p className="font-poppins text-sm text-teal-600 font-medium mb-2">
                 Tratamiento: {testimonials[currentIndex].treatment}
               </p>
             </motion.div>
