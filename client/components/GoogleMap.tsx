@@ -82,7 +82,7 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 shadow-xl border border-sand-200"
+          className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6 bg-white rounded-2xl p-4 md:p-6 shadow-xl border border-sand-200 backdrop-blur-sm bg-white/95"
         >
           <div className="flex items-start space-x-4">
             <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -99,10 +99,16 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
                 <p className="font-poppins font-medium text-teal-600">{mockLocation.city}</p>
               </div>
             </div>
-            <button className="px-4 py-2 bg-teal-500 text-white rounded-xl font-poppins font-medium hover:bg-teal-600 transition-colors">
-              <Navigation size={16} className="inline mr-2" />
-              Cómo llegar
-            </button>
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${mockLocation.lat},${mockLocation.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-teal-500 text-white rounded-xl font-poppins font-medium hover:bg-teal-600 transition-colors shadow-lg hover:shadow-xl"
+            >
+              <Navigation size={16} className="mr-2" />
+              <span className="hidden sm:inline">Cómo llegar</span>
+              <span className="sm:hidden">Ir</span>
+            </a>
           </div>
         </motion.div>
       </div>
