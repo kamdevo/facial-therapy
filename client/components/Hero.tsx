@@ -80,7 +80,7 @@ export default function Hero() {
               className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
             >
               Realza tu{' '}
-              <span className="bg-gradient-to-r from-blush-400 to-gold-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
                 belleza natural
               </span>
               {' '}con Facial Therapy
@@ -105,7 +105,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blush-400 to-blush-500 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 Agenda tu cita ahora
               </motion.button>
@@ -113,7 +113,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-nude-300 text-foreground px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-nude-100 transition-all duration-300"
+                className="border-2 border-sand-300 text-foreground px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-sand-100 transition-all duration-300"
               >
                 Ver servicios
               </motion.button>
@@ -132,9 +132,9 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl"
             >
-              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-nude-200 to-blush-200 flex items-center justify-center">
+              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blush-300 to-gold-300 rounded-full flex items-center justify-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-bronze-300 rounded-full flex items-center justify-center">
                     <Sparkles size={60} className="text-white" />
                   </div>
                   <p className="font-playfair text-2xl text-foreground/80">
