@@ -25,17 +25,17 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
     {
       icon: MapPin,
       title: "Fácil Acceso",
-      description: "Ubicación céntrica con excelente transporte público"
+      description: "Ubicación céntrica con excelente transporte público y accesibilidad"
     },
     {
       icon: Navigation,
-      title: "Estacionamiento",
-      description: "Parqueadero gratuito disponible para clientes"
+      title: "Estacionamiento Gratuito",
+      description: "Parqueadero disponible con espacios para personas con discapacidad"
     },
     {
       icon: Clock,
-      title: "Horarios Extendidos", 
-      description: "Abierto de lunes a domingo para tu comodidad"
+      title: "Horarios Extendidos",
+      description: "Lun-Vie: 9AM-7PM | Sáb: 9AM-6PM | Dom: 10AM-4PM"
     }
   ];
 
