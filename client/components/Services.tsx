@@ -137,7 +137,7 @@ export default function Services() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-playfair text-lg font-bold text-blush-500">
+                    <p className="font-playfair text-lg font-bold text-teal-600">
                       {service.price}
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export default function Services() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full mt-6 bg-gradient-to-r from-nude-200 to-cream-200 text-foreground py-3 rounded-2xl font-poppins font-medium hover:from-blush-400 hover:to-blush-500 hover:text-white transition-all duration-300"
+                  className="w-full mt-6 bg-gradient-to-r from-sand-200 to-cream-200 text-foreground py-3 rounded-2xl font-poppins font-medium hover:from-teal-500 hover:to-teal-600 hover:text-white transition-all duration-300"
                 >
                   Reservar este tratamiento
                 </motion.button>
@@ -169,7 +169,7 @@ export default function Services() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blush-400 to-blush-500 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
           >
             Consulta Personalizada
           </motion.button>
