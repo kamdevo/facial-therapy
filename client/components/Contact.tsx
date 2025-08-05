@@ -210,7 +210,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-8"
           >
             {/* Contact Information */}
@@ -220,7 +220,7 @@ export default function Contact() {
                   key={info.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.15 + index * 0.05 }}
                   className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200 flex items-start space-x-4"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -244,7 +244,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200"
             >
               <h4 className="font-poppins font-semibold text-foreground text-lg mb-4">
