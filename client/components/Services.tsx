@@ -56,7 +56,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-poppins text-blush-500 font-medium text-lg mb-4"
+            className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Nuestros Servicios
           </motion.p>
@@ -68,7 +68,7 @@ export default function Services() {
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Tratamientos que{' '}
-            <span className="bg-gradient-to-r from-blush-400 to-gold-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
               transforman
             </span>
           </motion.h2>
@@ -100,13 +100,13 @@ export default function Services() {
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="w-16 h-16 bg-gradient-to-br from-blush-400 to-gold-400 rounded-2xl flex items-center justify-center mb-6"
+                  className="w-16 h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-2xl flex items-center justify-center mb-6"
                 >
                   <service.icon size={32} className="text-white" />
                 </motion.div>
 
                 {/* Service Content */}
-                <h3 className="font-playfair text-2xl font-bold text-foreground mb-4 group-hover:text-blush-500 transition-colors">
+                <h3 className="font-playfair text-2xl font-bold text-foreground mb-4 group-hover:text-teal-600 transition-colors">
                   {service.title}
                 </h3>
                 
@@ -118,7 +118,7 @@ export default function Services() {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center font-poppins text-sm text-foreground">
-                      <div className="w-1.5 h-1.5 bg-blush-400 rounded-full mr-3"></div>
+                      <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
