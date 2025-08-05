@@ -151,7 +151,7 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-blush-400 flex-shrink-0" />
+                <Mail size={20} className="text-teal-500 flex-shrink-0" />
                 <p className="font-poppins text-muted-foreground">
                   info@facialtherapy.com
                 </p>
@@ -162,7 +162,7 @@ export default function Footer() {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 w-full bg-gradient-to-r from-blush-400 to-blush-500 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="mt-6 w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Reservar Cita
             </motion.button>
@@ -184,13 +184,13 @@ export default function Footer() {
             <div className="flex items-center space-x-6">
               <a
                 href="#"
-                className="font-poppins text-sm text-muted-foreground hover:text-blush-500 transition-colors"
+                className="font-poppins text-sm text-muted-foreground hover:text-teal-600 transition-colors"
               >
                 Política de Privacidad
               </a>
               <a
                 href="#"
-                className="font-poppins text-sm text-muted-foreground hover:text-blush-500 transition-colors"
+                className="font-poppins text-sm text-muted-foreground hover:text-teal-600 transition-colors"
               >
                 Términos de Servicio
               </a>
@@ -204,7 +204,7 @@ export default function Footer() {
             className="flex items-center justify-center mt-4 text-muted-foreground"
           >
             <span className="font-poppins text-sm mr-2">Hecho con</span>
-            <Heart size={16} className="text-blush-400 fill-current" />
+            <Heart size={16} className="text-teal-500 fill-current" />
             <span className="font-poppins text-sm ml-2">para tu belleza</span>
           </motion.div>
         </motion.div>
