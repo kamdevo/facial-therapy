@@ -65,13 +65,13 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Contacto
@@ -80,7 +80,7 @@ export default function Contact() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Agenda tu{' '}
@@ -92,7 +92,7 @@ export default function Contact() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Estamos aquí para ayudarte a encontrar el tratamiento perfecto para tu piel. 
@@ -105,7 +105,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="bg-white rounded-3xl p-8 shadow-2xl border border-nude-200"
           >
             <h3 className="font-playfair text-3xl font-bold text-foreground mb-6">
