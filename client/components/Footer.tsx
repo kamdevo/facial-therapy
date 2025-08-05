@@ -42,7 +42,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blush-400 to-gold-400 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center">
                 <span className="text-white font-playfair font-bold text-xl">F</span>
               </div>
               <div>
@@ -73,7 +73,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="text-blush-400" />
+                  <social.icon size={20} className="text-teal-500" />
                 </motion.a>
               ))}
             </div>
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="font-poppins text-muted-foreground hover:text-blush-500 transition-colors duration-300"
+                    className="font-poppins text-muted-foreground hover:text-teal-600 transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -133,7 +133,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin size={20} className="text-blush-400 mt-1 flex-shrink-0" />
+                <MapPin size={20} className="text-teal-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-poppins text-muted-foreground">
                     Av. Principal 123<br />
@@ -144,7 +144,7 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-blush-400 flex-shrink-0" />
+                <Phone size={20} className="text-teal-500 flex-shrink-0" />
                 <p className="font-poppins text-muted-foreground">
                   +1 (555) 123-4567
                 </p>
