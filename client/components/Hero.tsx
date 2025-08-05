@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
+import { SparklesText } from '../ui/sparkles-text';
 
 export default function Hero() {
   return (
