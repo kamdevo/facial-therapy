@@ -124,7 +124,7 @@ export default function Testimonials() {
               key={`info-${currentIndex}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="flex items-center"
             >
               <div className={`w-16 h-16 ${testimonials[currentIndex].image} rounded-full flex items-center justify-center mr-4`}>
@@ -184,7 +184,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="text-center mt-16"
         >
           <p className="font-poppins text-muted-foreground mb-6">
