@@ -250,9 +250,9 @@ export default function Contact() {
               <h4 className="font-poppins font-semibold text-foreground text-lg mb-4">
                 Nuestra ubicación
               </h4>
-              <div className="aspect-video bg-gradient-to-br from-cream-200 via-nude-200 to-blush-200 rounded-xl flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 rounded-xl flex items-center justify-center">
                 <div className="text-center">
-                  <MapPin size={48} className="text-blush-400 mx-auto mb-2" />
+                  <MapPin size={48} className="text-teal-500 mx-auto mb-2" />
                   <p className="font-poppins text-foreground/80">
                     Google Maps integrado
                   </p>
