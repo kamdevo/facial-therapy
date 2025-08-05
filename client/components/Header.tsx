@@ -17,7 +17,7 @@ export default function Header() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-nude-200"
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -50,7 +50,7 @@ export default function Header() {
                 href={item.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.3 }}
+                transition={{ delay: index * 0.05 + 0.1 }}
                 whileHover={{ y: -2 }}
                 className="font-poppins font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
               >
@@ -64,7 +64,7 @@ export default function Header() {
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg hover:shadow-xl transition-all duration-300"
