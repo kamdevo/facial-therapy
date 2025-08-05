@@ -149,7 +149,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={prevTestimonial}
-              className="w-12 h-12 bg-white border-2 border-nude-300 rounded-full flex items-center justify-center shadow-lg hover:border-blush-400 transition-colors"
+              className="w-12 h-12 bg-white border-2 border-sand-300 rounded-full flex items-center justify-center shadow-lg hover:border-teal-500 transition-colors"
             >
               <ChevronLeft size={20} className="text-foreground" />
             </motion.button>
@@ -161,9 +161,9 @@ export default function Testimonials() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-blush-400 w-8' 
-                      : 'bg-nude-300 hover:bg-nude-400'
+                    index === currentIndex
+                      ? 'bg-teal-500 w-8'
+                      : 'bg-sand-300 hover:bg-sand-400'
                   }`}
                 />
               ))}
@@ -173,7 +173,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={nextTestimonial}
-              className="w-12 h-12 bg-white border-2 border-nude-300 rounded-full flex items-center justify-center shadow-lg hover:border-blush-400 transition-colors"
+              className="w-12 h-12 bg-white border-2 border-sand-300 rounded-full flex items-center justify-center shadow-lg hover:border-teal-500 transition-colors"
             >
               <ChevronRight size={20} className="text-foreground" />
             </motion.button>
@@ -193,7 +193,7 @@ export default function Testimonials() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blush-400 to-blush-500 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
           >
             Agenda tu primera cita
           </motion.button>
