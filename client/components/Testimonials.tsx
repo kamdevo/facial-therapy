@@ -50,13 +50,13 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Testimonios
@@ -65,7 +65,7 @@ export default function Testimonials() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Lo que dicen{' '}
@@ -77,7 +77,7 @@ export default function Testimonials() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Cada testimonio refleja nuestro compromiso con la excelencia y la satisfacción de nuestras clientas.
@@ -88,7 +88,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="relative max-w-4xl mx-auto"
         >
           <div className="relative bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-nude-200">
