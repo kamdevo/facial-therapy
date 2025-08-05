@@ -72,7 +72,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-poppins text-blush-500 font-medium text-lg mb-4"
+            className="font-poppins text-teal-600 font-medium text-lg mb-4"
           >
             Contacto
           </motion.p>
@@ -84,7 +84,7 @@ export default function Contact() {
             className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Agenda tu{' '}
-            <span className="bg-gradient-to-r from-blush-400 to-gold-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
               cita hoy
             </span>
           </motion.h2>
@@ -124,7 +124,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-nude-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blush-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
                     placeholder="Tu nombre"
                   />
                 </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-nude-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blush-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-nude-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blush-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-nude-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blush-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
                   >
                     <option value="">Selecciona un servicio</option>
                     {services.map((service) => (
@@ -198,7 +198,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blush-400 to-blush-500 text-white py-4 rounded-xl font-poppins font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center"
+                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white py-4 rounded-xl font-poppins font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center"
               >
                 <Send size={20} className="mr-2" />
                 Enviar mensaje
@@ -223,7 +223,7 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200 flex items-start space-x-4"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blush-400 to-gold-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <info.icon size={24} className="text-white" />
                   </div>
                   <div>
