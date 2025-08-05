@@ -72,7 +72,7 @@ export default function About() {
               className="space-y-4 mb-8"
             >
               <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-blush-400 to-gold-400 rounded-full flex items-center justify-center mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export default function About() {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-blush-400 to-gold-400 rounded-full flex items-center justify-center mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export default function About() {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-blush-400 to-gold-400 rounded-full flex items-center justify-center mt-1">
+                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function About() {
             >
               <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blush-300 to-gold-300 rounded-full flex items-center justify-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-bronze-300 rounded-full flex items-center justify-center">
                     <Heart size={60} className="text-white" />
                   </div>
                   <p className="font-playfair text-2xl text-foreground/80">
@@ -153,7 +153,7 @@ export default function About() {
                   whileHover={{ scale: 1.05 }}
                   className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200 text-center"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blush-400 to-gold-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <stat.icon size={24} className="text-white" />
                   </div>
                   <p className="font-playfair text-2xl font-bold text-foreground mb-1">
