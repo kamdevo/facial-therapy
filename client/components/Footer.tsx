@@ -173,7 +173,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="border-t border-nude-300 mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
@@ -200,7 +200,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center justify-center mt-4 text-muted-foreground"
           >
             <span className="font-poppins text-sm mr-2">Hecho con</span>
