@@ -222,7 +222,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.15 + index * 0.05 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-nude-200 flex items-start space-x-4"
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-sand-300 flex items-start space-x-4"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl flex items-center justify-center flex-shrink-0">
                     <info.icon size={24} className="text-white" />
