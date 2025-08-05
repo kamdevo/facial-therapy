@@ -28,7 +28,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-poppins text-blush-500 font-medium text-lg mb-4"
+              className="font-poppins text-teal-600 font-medium text-lg mb-4"
             >
               Sobre Nosotros
             </motion.p>
@@ -40,7 +40,7 @@ export default function About() {
               className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
             >
               Nuestra pasión es{' '}
-              <span className="bg-gradient-to-r from-blush-400 to-gold-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
                 tu bienestar
               </span>
             </motion.h2>
@@ -108,7 +108,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.9 }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blush-400 to-blush-500 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               Conoce nuestro equipo
             </motion.button>
@@ -127,7 +127,7 @@ export default function About() {
               transition={{ type: "spring", stiffness: 300 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl mb-8"
             >
-              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-nude-200 to-blush-200 flex items-center justify-center">
+              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blush-300 to-gold-300 rounded-full flex items-center justify-center">
                     <Heart size={60} className="text-white" />
