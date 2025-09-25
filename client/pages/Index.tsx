@@ -15,6 +15,7 @@ export default function Index() {
       <main>
         <Hero />
         <Services />
+        <Promotions />
         <About />
         <Testimonials />
         <Contact />
