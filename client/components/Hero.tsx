@@ -2,20 +2,20 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { SparklesText } from './ui/sparkles-text';
-import simpleParallax from 'simple-parallax-js';
+import SimpleParallax from 'simple-parallax-js';
 
 export default function Hero() {
   const heroImgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     if (!heroImgRef.current) return;
-    const instance = simpleParallax(heroImgRef.current, {
+    const instance = new (SimpleParallax as any)(heroImgRef.current, {
       scale: 1.3,
       delay: 0.1,
       transition: 'cubic-bezier(0,0,0,1)'
     });
     return () => {
-      if (instance && typeof (instance as any).destroy === 'function') (instance as any).destroy();
+      if (instance && typeof instance.destroy === 'function') instance.destroy();
     };
   }, []);
 
