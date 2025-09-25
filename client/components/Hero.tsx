@@ -138,18 +138,14 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl"
             >
-              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 via-sand-200 to-teal-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-bronze-300 rounded-full flex items-center justify-center">
-                    <Sparkles size={60} className="text-white" />
-                  </div>
-                  <p className="font-playfair text-2xl text-foreground/80">
-                    Tu belleza natural
-                  </p>
-                  <p className="font-poppins text-foreground/60 mt-2">
-                    Cuidado profesional
-                  </p>
-                </div>
+              <div className="aspect-[4/5] relative">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2F42be7d1fdc574caaa6129d9d2ad2921b?format=webp&width=1600"
+                  alt="Tratamiento facial en Facial Therapy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-cream-200/60 via-sand-200/20 to-teal-200/10 mix-blend-multiply"></div>
               </div>
               
               {/* Floating Badge */}
