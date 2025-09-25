@@ -28,9 +28,11 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-playfair font-bold text-lg">F</span>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2Ff44a3fcb8b7a4cd6bd08f098474795c0?format=webp&width=256"
+                alt="Facial Therapy logo"
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <h1 className="font-playfair font-bold text-xl text-foreground">
                   Facial Therapy
