@@ -1,8 +1,24 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { SparklesText } from './ui/sparkles-text';
+import SimpleParallax from 'simple-parallax-js';
 
 export default function Hero() {
+  const heroImgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    if (!heroImgRef.current) return;
+    const instance = new (SimpleParallax as any)(heroImgRef.current, {
+      scale: 1.3,
+      delay: 0.1,
+      transition: 'cubic-bezier(0,0,0,1)'
+    });
+    return () => {
+      if (instance && typeof instance.destroy === 'function') instance.destroy();
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -108,21 +124,17 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+              <button
+                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg shadow-xl transition-all duration-300"
               >
                 Agenda tu cita ahora
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-sand-300 text-foreground px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-sand-100 transition-all duration-300"
+              </button>
+
+              <button
+                className="border-2 border-sand-300 text-foreground px-8 py-4 rounded-full font-poppins font-semibold text-lg transition-all duration-300"
               >
                 Ver servicios
-              </motion.button>
+              </button>
             </motion.div>
           </motion.div>
 
@@ -133,13 +145,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl"
-            >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
+                  ref={heroImgRef}
                   src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2F42be7d1fdc574caaa6129d9d2ad2921b?format=webp&width=1600"
                   alt="Tratamiento facial en Facial Therapy"
                   className="absolute inset-0 h-full w-full object-cover"
@@ -147,7 +156,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-cream-200/60 via-sand-200/20 to-teal-200/10 mix-blend-multiply"></div>
               </div>
-              
+
               {/* Floating Badge */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
@@ -164,7 +173,7 @@ export default function Hero() {
                   </p>
                 </div>
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
