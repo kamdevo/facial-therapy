@@ -92,21 +92,15 @@ export default function Services() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group"
             >
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-nude-200 h-full">
+              <div className="bg-white rounded-3xl p-8 shadow-lg transition-all duration-300 border border-nude-200 h-full">
                 {/* Service Icon */}
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="w-16 h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-2xl flex items-center justify-center mb-6"
-                >
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-2xl flex items-center justify-center mb-6">
                   <service.icon size={32} className="text-white" />
-                </motion.div>
+                </div>
 
                 {/* Service Content */}
-                <h3 className="font-playfair text-2xl font-bold text-foreground mb-4 group-hover:text-teal-600 transition-colors">
+                <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">
                   {service.title}
                 </h3>
                 
@@ -144,13 +138,11 @@ export default function Services() {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full mt-6 bg-gradient-to-r from-sand-200 to-cream-200 text-foreground py-3 rounded-2xl font-poppins font-medium hover:from-teal-500 hover:to-teal-600 hover:text-white transition-all duration-300"
+                <button
+                  className="w-full mt-6 bg-gradient-to-r from-sand-200 to-cream-200 text-foreground py-3 rounded-2xl font-poppins font-medium"
                 >
                   Reservar este tratamiento
-                </motion.button>
+                </button>
               </div>
             </motion.div>
           ))}
@@ -167,9 +159,7 @@ export default function Services() {
             ¿No encuentras lo que buscas? Contáctanos para tratamientos personalizados.
           </p>
           <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl"
           >
             Consulta Personalizada
           </motion.button>
