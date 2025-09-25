@@ -23,26 +23,23 @@ export default function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Link to="/" className="flex items-center space-x-2">
+          <div>
+            <Link to="/" className="flex items-center space-x-3">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2Ff44a3fcb8b7a4cd6bd08f098474795c0?format=webp&width=256"
+                src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2Ff44a3fcb8b7a4cd6bd08f098474795c0?format=webp&width=512"
                 alt="Facial Therapy logo"
-                className="w-10 h-10 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow"
               />
               <div>
-                <h1 className="font-playfair font-bold text-xl text-foreground">
+                <h1 className="font-playfair font-bold text-2xl text-foreground leading-none">
                   Facial Therapy
                 </h1>
-                <p className="text-xs text-muted-foreground font-poppins">
+                <p className="text-sm text-muted-foreground font-poppins">
                   Belleza Natural
                 </p>
               </div>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -53,11 +50,9 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 + 0.1 }}
-                whileHover={{ y: -2 }}
-                className="font-poppins font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className="font-poppins font-medium text-foreground"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
           </nav>
@@ -67,9 +62,7 @@ export default function Header() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+            className="hidden md:block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg"
           >
             Reservar Cita
           </motion.button>
