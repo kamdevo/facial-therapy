@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { SparklesText } from './ui/sparkles-text';
-import SimpleParallax from 'simple-parallax-js';
+import simpleParallax from 'simple-parallax-js';
 
 export default function Hero() {
   const heroImgRef = useRef<HTMLImageElement | null>(null);
