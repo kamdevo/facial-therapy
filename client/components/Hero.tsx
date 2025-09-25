@@ -9,13 +9,13 @@ export default function Hero() {
 
   useEffect(() => {
     if (!heroImgRef.current) return;
-    const instance = new (SimpleParallax as any)(heroImgRef.current, {
+    const instance = simpleParallax(heroImgRef.current, {
       scale: 1.3,
       delay: 0.1,
       transition: 'cubic-bezier(0,0,0,1)'
     });
     return () => {
-      if (instance && typeof instance.destroy === 'function') instance.destroy();
+      if (instance && typeof (instance as any).destroy === 'function') (instance as any).destroy();
     };
   }, []);
 
