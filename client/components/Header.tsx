@@ -81,9 +81,9 @@ export default function Header() {
           initial={false}
           animate={isMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden bg-white/80 backdrop-blur-md rounded-b-2xl shadow"
         >
-          <nav className="py-4 space-y-4 border-t border-nude-200">
+          <nav className="py-4 space-y-4">
             {menuItems.map((item) => (
               <a
                 key={item.name}
