@@ -23,7 +23,7 @@ export default function Promotions() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', skipSnaps: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', skipSnaps: false, speed: 6 });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback((api: EmblaCarouselType) => {
@@ -36,6 +36,24 @@ export default function Promotions() {
     onSelect(emblaApi);
     emblaApi.on('select', onSelect);
   }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = 4500; // ms
+    let timer: number | undefined;
+
+    const autoplay = () => {
+      if (!emblaApi) return;
+      if (!document.hidden) emblaApi.scrollNext();
+      timer = window.setTimeout(autoplay, interval);
+    };
+
+    timer = window.setTimeout(autoplay, interval);
+
+    return () => {
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [emblaApi]);
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
