@@ -10,10 +10,9 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
   const mockLocation = {
     lat: 4.6097,
     lng: -74.0817,
-    address: "Av. Principal 123",
-    neighborhood: "Centro Comercial Plaza Beauty",
-    floor: "Local 45, 2do Piso",
-    city: "Bogotá, Colombia"
+    address: "Avenida 5B #25 Norte-32",
+    neighborhood: "San Vicente",
+    city: "Cali, Colombia"
   };
 
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${mockLocation.lat},${mockLocation.lng}&zoom=16&maptype=roadmap`;
