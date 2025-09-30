@@ -46,8 +46,8 @@ export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const items = testimonials.map((t) => (
-    <div className="bg-white/80 backdrop-blur rounded-3xl p-6 shadow-xl border border-sand-300">
+  const Card = (t: typeof testimonials[number]) => (
+    <div className="bg-white/80 backdrop-blur rounded-3xl p-6 shadow-xl border border-sand-300" key={t.name}>
       <div className="flex items-start gap-4">
         <div className="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-bronze-400 grid place-items-center text-white font-playfair font-bold">
           {t.name.split(' ').map((n) => n[0]).join('')}
@@ -66,7 +66,7 @@ export default function Testimonials() {
         </div>
       </div>
     </div>
-  ));
+  );
 
   return (
     <section id="testimonials" ref={ref} className="py-20 bg-gradient-to-b from-cream-50 to-white">
