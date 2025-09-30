@@ -27,8 +27,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/facialtherapycali?igsh=MWlqNXRhdDUxdTh5aA%3D%3D&utm_source=qr', target: "_" label: 'Instagram' },
+    { icon: Facebook, href: '#',  label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' }
   ];
 
