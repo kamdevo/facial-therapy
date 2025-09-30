@@ -6,19 +6,16 @@ interface GoogleMapProps {
 }
 
 export default function GoogleMap({ isInView }: GoogleMapProps) {
-  // Ubicación mock - Centro de una ciudad (ej: Bogotá, Colombia)
-  const mockLocation = {
-    lat: 4.6097,
-    lng: -74.0817,
+  // Dirección oficial: Cali, Colombia
+  const location = {
     address: "Avenida 5B #25 Norte-32",
     neighborhood: "San Vicente",
-    city: "Cali, Colombia"
+    city: "Cali, Colombia",
   };
+  const fullAddress = `${location.address}, ${location.neighborhood}, ${location.city}`;
 
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${mockLocation.lat},${mockLocation.lng}&zoom=16&maptype=roadmap`;
-  
-  // Para el demo, usaré un iframe de ejemplo de Google Maps
-  const demoMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2847855654!2d-74.08450062588928!3d4.609710643080441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a5cb9b6c6db%3A0x9b2b2b2b2b2b2b2b!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1sen!2sus!4v1647890123456!5m2!1sen!2sus`;
+  // Iframe directo con la dirección exacta (no requiere API key)
+  const demoMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
 
   const locationFeatures = [
     {
@@ -92,10 +89,9 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
                 Facial Therapy Spa
               </h4>
               <div className="space-y-1 text-sm text-muted-foreground">
-                <p className="font-poppins">{mockLocation.address}</p>
-                <p className="font-poppins">{mockLocation.neighborhood}</p>
-                <p className="font-poppins">{mockLocation.floor}</p>
-                <p className="font-poppins font-medium text-teal-600">{mockLocation.city}</p>
+                <p className="font-poppins">{location.address}</p>
+                <p className="font-poppins">{location.neighborhood}</p>
+                <p className="font-poppins font-medium text-teal-600">{location.city}</p>
               </div>
             </div>
             <a
@@ -157,7 +153,7 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
               Abrir en Google Maps
             </a>
             <a
-              href="tel:+15551234567"
+              href="tel:+573052962347"
               className="inline-flex items-center justify-center px-6 py-3 bg-bronze-500 text-white rounded-xl font-poppins font-semibold hover:bg-bronze-600 transition-colors"
             >
               <Phone size={18} className="mr-2" />
