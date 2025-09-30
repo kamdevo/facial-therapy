@@ -136,9 +136,9 @@ export default function Footer() {
                 <MapPin size={20} className="text-teal-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-poppins text-muted-foreground">
-                    Av. Principal 123<br />
-                    Centro Comercial Plaza Beauty<br />
-                    Local 45, 2do Piso
+                    Avenida 5B #25 Norte-32<br />
+                    San Vicente<br />
+                    Cali, Colombia
                   </p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone size={20} className="text-teal-500 flex-shrink-0" />
                 <p className="font-poppins text-muted-foreground">
-                  +1 (555) 123-4567
+                  +57 305 2962347
                 </p>
               </div>
               

@@ -14,7 +14,7 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 );
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "+15559876543"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+57 305 2962347"; // Número oficial de WhatsApp
   const message = "Hola! Me gustaría agendar una cita en Facial Therapy.";
 
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;

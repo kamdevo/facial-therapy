@@ -32,12 +32,12 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Ubicación",
-      details: ["Av. Principal 123", "Centro Comercial Plaza Beauty", "Local 45, 2do Piso"]
+      details: ["Avenida 5B #25 Norte-32", "San Vicente", "Cali, Colombia"]
     },
     {
       icon: Phone,
       title: "Teléfono",
-      details: ["+1 (555) 123-4567", "WhatsApp: +1 (555) 987-6543"]
+      details: ["+57 305 2962347", "WhatsApp: +57 305 2962347"]
     },
     {
       icon: Mail,
