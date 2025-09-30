@@ -99,7 +99,7 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
               </div>
             </div>
             <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${mockLocation.lat},${mockLocation.lng}`}
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-teal-500 text-white rounded-xl font-poppins font-medium hover:bg-teal-600 transition-colors shadow-lg hover:shadow-xl"
@@ -148,7 +148,7 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${mockLocation.lat},${mockLocation.lng}`}
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-teal-600 rounded-xl font-poppins font-semibold hover:bg-cream-50 transition-colors"
