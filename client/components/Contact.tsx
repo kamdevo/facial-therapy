@@ -52,11 +52,13 @@ export default function Contact() {
   ];
 
   const services = [
-    "Limpieza Facial Profunda",
-    "Tratamientos Anti-edad",
-    "Hidratación Intensiva",
-    "Masajes Faciales",
-    "Consulta Personalizada"
+    "Limpieza facial profunda",
+    "Limpieza facial con Hidrafacial",
+    "Hidratación facial con cámara hiperbárica",
+    "Tratamiento de peeling químico",
+    "Porcelanizacion facial",
+    "Masaje relajante completo",
+    "Masaje relajante de espalda"
   ];
 
   return (
