@@ -1,40 +1,64 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Droplets, Sparkles, Heart, Leaf, Clock, Shield } from 'lucide-react';
+import { Droplets, Sparkles, Heart, Leaf, Clock, Shield, FlaskConical } from 'lucide-react';
 
 const services = [
   {
     icon: Droplets,
-    title: "Limpieza Facial Profunda",
-    description: "Eliminación de impurezas y células muertas para una piel radiante y renovada.",
-    features: ["Exfoliación suave", "Extracción de puntos negros", "Hidratación profunda"],
+    title: "Limpieza facial profunda",
+    description: "Limpieza profunda para desobstruir poros y renovar la piel.",
+    features: ["Diagnóstico de la piel", "Vaporización y extracción", "Máscara calmante"],
     duration: "60 min",
     price: "Desde $80"
   },
   {
     icon: Sparkles,
-    title: "Tratamientos Anti-edad",
-    description: "Combate los signos del envejecimiento con técnicas avanzadas y productos premium.",
-    features: ["Radiofrecuencia", "Microdermoabrasión", "Mascarillas rejuvenecedoras"],
-    duration: "90 min",
+    title: "Limpieza facial con Hidrafacial",
+    description: "Tecnología Hydrafacial para limpiar, exfoliar e hidratar en un solo paso.",
+    features: ["Limpieza y exfoliación", "Extracción indolora", "Infusión de sueros"],
+    duration: "60–75 min",
     price: "Desde $120"
   },
   {
     icon: Heart,
-    title: "Hidratación Intensiva",
-    description: "Restaura la elasticidad y luminosidad natural de tu piel con tratamientos hidratantes.",
-    features: ["Ácido hialurónico", "Vitamina C", "Mascarillas nutritivas"],
+    title: "Hidratación facial con cámara hiperbárica",
+    description: "Oxigenación e hidratación profunda utilizando cámara hiperbárica.",
+    features: ["Oxigenoterapia", "Sueros hidratantes", "Sellado nutritivo"],
+    duration: "45–60 min",
+    price: "Desde $110"
+  },
+  {
+    icon: FlaskConical,
+    title: "Tratamiento de peeling químico",
+    description: "Renovación controlada para uniformar el tono y mejorar la textura.",
+    features: ["Ácidos médicos", "Neutralización segura", "Cuidado post-peeling"],
     duration: "45 min",
-    price: "Desde $65"
+    price: "Desde $95"
+  },
+  {
+    icon: Sparkles,
+    title: "Porcelanizacion facial",
+    description: "Acabado luminoso efecto porcelana ideal para eventos especiales.",
+    features: ["Suavizado de textura", "Iluminación inmediata", "Hidratación intensiva"],
+    duration: "60 min",
+    price: "Desde $130"
   },
   {
     icon: Leaf,
-    title: "Masajes Faciales Relajantes",
-    description: "Reduce el estrés y mejora la circulación con técnicas de masaje especializadas.",
-    features: ["Técnicas orientales", "Aceites esenciales", "Relajación total"],
-    duration: "30 min",
-    price: "Desde $45"
+    title: "Masaje relajante completo",
+    description: "Masaje corporal completo para reducir estrés y tensión.",
+    features: ["Aromaterapia", "Maniobras suaves descontracturantes", "Bienestar integral"],
+    duration: "60–90 min",
+    price: "Desde $90"
+  },
+  {
+    icon: Leaf,
+    title: "Masaje relajante de espalda",
+    description: "Enfoque en cuello, hombros y espalda para aliviar la tensión.",
+    features: ["Aceites esenciales", "Técnicas localizadas", "Relajación profunda"],
+    duration: "30–45 min",
+    price: "Desde $55"
   }
 ];
 
