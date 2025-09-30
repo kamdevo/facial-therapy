@@ -1,64 +1,60 @@
-import * as React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+"use client";
 
-export type AnimatedListItem = React.ReactNode;
+import React, { ComponentPropsWithoutRef, useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion, type MotionProps } from "framer-motion";
+import { cn } from "../../lib/utils";
 
-interface AnimatedListProps {
-  items: AnimatedListItem[];
-  /** Time in seconds to scroll the whole list once */
-  duration?: number;
-  /** Gap between items */
-  gap?: number;
-  /** Pause on hover */
-  pauseOnHover?: boolean;
-  className?: string;
-}
-
-/**
- * Animated vertical ticker list (MagicUI-inspired) that loops seamlessly.
- * Duplicates the items and animates translateY for an infinite marquee effect.
- */
-export function AnimatedList({
-  items,
-  duration = 18,
-  gap = 16,
-  pauseOnHover = true,
-  className = '',
-}: AnimatedListProps) {
-  const shouldReduce = useReducedMotion();
-  const contentRef = React.useRef<HTMLDivElement | null>(null);
-  const [isHover, setIsHover] = React.useState(false);
-
-  const anim = shouldReduce
-    ? {}
-    : {
-        y: [0, -50, 0],
-        transition: {
-          duration,
-          times: [0, 1],
-          ease: 'linear',
-          repeat: Infinity,
-        },
-      } as const;
+export function AnimatedListItem({ children }: { children: React.ReactNode }) {
+  const animations: MotionProps = {
+    initial: { scale: 0, opacity: 0 },
+    animate: { scale: 1, opacity: 1, originY: 0 },
+    exit: { scale: 0, opacity: 0 },
+    transition: { type: "spring", stiffness: 350, damping: 40 },
+  };
 
   return (
-    <div
-      className={`relative overflow-hidden ${className}`}
-      onMouseEnter={() => pauseOnHover && setIsHover(true)}
-      onMouseLeave={() => pauseOnHover && setIsHover(false)}
-    >
-      <motion.div
-        ref={contentRef}
-        style={{ display: 'grid', rowGap: gap, gridAutoRows: 'minmax(0,auto)' }}
-        animate={isHover ? undefined : anim}
-        className="will-change-transform"
-      >
-        {[...items, ...items].map((child, idx) => (
-          <div key={idx} className="min-h-[72px]">
-            {child}
-          </div>
-        ))}
-      </motion.div>
-    </div>
+    <motion.div {...animations} layout className="mx-auto w-full">
+      {children}
+    </motion.div>
   );
 }
+
+export interface AnimatedListProps extends ComponentPropsWithoutRef<"div"> {
+  children: React.ReactNode;
+  delay?: number;
+}
+
+export const AnimatedList = React.memo(
+  ({ children, className, delay = 1000, ...props }: AnimatedListProps) => {
+    const [index, setIndex] = useState(0);
+    const childrenArray = useMemo(() => React.Children.toArray(children), [children]);
+
+    useEffect(() => {
+      if (index < childrenArray.length - 1) {
+        const timeout = setTimeout(() => {
+          setIndex((prevIndex) => (prevIndex + 1) % childrenArray.length);
+        }, delay);
+        return () => clearTimeout(timeout);
+      }
+    }, [index, delay, childrenArray.length]);
+
+    const itemsToShow = useMemo(() => {
+      const result = childrenArray.slice(0, index + 1).reverse();
+      return result;
+    }, [index, childrenArray]);
+
+    return (
+      <div className={cn(`flex flex-col items-center gap-4`, className)} {...props}>
+        <AnimatePresence>
+          {itemsToShow.map((item) => (
+            <AnimatedListItem key={(item as React.ReactElement).key}>
+              {item}
+            </AnimatedListItem>
+          ))}
+        </AnimatePresence>
+      </div>
+    );
+  }
+);
+
+AnimatedList.displayName = "AnimatedList";
