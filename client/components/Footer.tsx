@@ -27,10 +27,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/facialtherapycali?igsh=MWlqNXRhdDUxdTh5aA%3D%3D&utm_source=qr',  label: 'Instagram' },
-    { icon: Facebook, href: '#',  label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
-
+    { icon: Instagram, href: 'https://www.instagram.com/facialtherapycali?igsh=MWlqNXRhdDUxdTh5aA%3D%3D&utm_source=qr', target: "_", label: 'Instagram' },
+    { icon: Youtube, href: 'https://youtube.com/@jennifermartinez-i8f?si=QThxnQxVRwPNT2iL',  label: 'YouTube' },
+    { icon: TikTokIcon, href: 'https://www.tiktok.com/@facial.therapy?_t=ZS-90A8XrLN2Ju&_r=1', label: 'TikTok' }
   ];
 
   return (
