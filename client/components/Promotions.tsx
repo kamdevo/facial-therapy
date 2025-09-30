@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
-import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { motion, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AspectRatio } from './ui/aspect-ratio';
@@ -23,10 +23,10 @@ export default function Promotions() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', skipSnaps: false, speed: 6 });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', skipSnaps: false, duration: 20 });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const onSelect = useCallback((api: EmblaCarouselType) => {
+  const onSelect = useCallback((api: any) => {
     if (!api) return;
     setSelectedIndex(api.selectedScrollSnap());
   }, []);
