@@ -87,8 +87,12 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-          <AnimatedList items={items.slice(0, Math.ceil(items.length / 2))} duration={16} className="max-h-[520px]" />
-          <AnimatedList items={items.slice(Math.ceil(items.length / 2))} duration={18} className="hidden lg:block max-h-[520px]" />
+          <AnimatedList delay={900} className="max-h-[520px]">
+            {testimonials.slice(0, Math.ceil(testimonials.length / 2)).map(Card)}
+          </AnimatedList>
+          <AnimatedList delay={1100} className="hidden lg:flex max-h-[520px]">
+            {testimonials.slice(Math.ceil(testimonials.length / 2)).map(Card)}
+          </AnimatedList>
         </div>
       </div>
     </section>
