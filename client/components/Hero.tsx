@@ -1,26 +1,10 @@
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { SparklesText } from './ui/sparkles-text';
-import SimpleParallax from 'simple-parallax-js';
 
 export default function Hero() {
-  const heroImgRef = useRef<HTMLImageElement | null>(null);
-
-  useEffect(() => {
-    if (!heroImgRef.current) return;
-    const instance = new (SimpleParallax as any)(heroImgRef.current, {
-      scale: 1.3,
-      delay: 0.1,
-      transition: 'cubic-bezier(0,0,0,1)'
-    });
-    return () => {
-      if (instance && typeof instance.destroy === 'function') instance.destroy();
-    };
-  }, []);
-
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-32">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-sand-50 to-teal-50"></div>
       
@@ -148,7 +132,6 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] relative">
                 <img
-                  ref={heroImgRef}
                   src="https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2F42be7d1fdc574caaa6129d9d2ad2921b?format=webp&width=1600"
                   alt="Tratamiento facial en Facial Therapy"
                   className="absolute inset-0 h-full w-full object-cover"
