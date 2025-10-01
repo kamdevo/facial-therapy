@@ -131,4 +131,9 @@
     scrollbar-width: thin;
     scrollbar-color: #d4943a transparent;
   }
+
+  /* Anchor offset for fixed header */
+  section[id] {
+    scroll-margin-top: 96px; /* avoid header overlap on anchor navigation */
+  }
 }
