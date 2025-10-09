@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import GoogleMap from './GoogleMap';
+import { toast } from '@/components/ui/use-toast';
 
 export default function Contact() {
   const ref = useRef(null);
