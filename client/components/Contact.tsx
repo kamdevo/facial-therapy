@@ -193,7 +193,26 @@ export default function Contact() {
                   </select>
                 </div>
               </div>
-              
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-poppins font-medium text-foreground mb-2">Fecha preferida</label>
+                  <input
+                    id="appt-date"
+                    type="date"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <label className="block font-poppins font-medium text-foreground mb-2">Hora preferida</label>
+                  <input
+                    id="appt-time"
+                    type="time"
+                    className="w-full px-4 py-3 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+              </div>
+
               <div>
                 <label className="block font-poppins font-medium text-foreground mb-2">
                   Mensaje adicional
