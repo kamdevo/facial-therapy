@@ -133,6 +133,32 @@ export default function Admin() {
   const [editing, setEditing] = useState<Appointment | null>(null);
   const [viewing, setViewing] = useState<Appointment | null>(null);
 
+  if (!auth) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <Card className="w-full max-w-sm p-6 space-y-4">
+          <div className="space-y-1">
+            <h1 className="text-xl font-semibold">Acceso Admin</h1>
+            <p className="text-sm text-muted-foreground">Ingresa la clave de administrador para continuar.</p>
+          </div>
+          <div className="space-y-2">
+            <Label>Clave</Label>
+            <Input type="password" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="••••••" />
+          </div>
+          <Button onClick={() => {
+            if (pass === requiredKey) {
+              localStorage.setItem("facialtherapy:admin:auth", "true");
+              setAuth(true);
+            } else {
+              toast({ title: "Clave incorrecta", description: "Verifica la clave e inténtalo nuevamente." });
+            }
+          }} className="w-full">Entrar</Button>
+          <p className="text-xs text-muted-foreground">Configura VITE_ADMIN_KEY para activar esta protección.</p>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
