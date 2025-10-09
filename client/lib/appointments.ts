@@ -81,7 +81,7 @@ export const Appointments = {
   create(input: Omit<Appointment, "id" | "createdAt" | "updatedAt" | "status"> & { status?: AppointmentStatus }): Appointment {
     const items = load();
     const item: Appointment = {
-      id: nanoid(),
+      id: uid(),
       status: input.status ?? "pending",
       createdAt: nowISO(),
       updatedAt: nowISO(),
