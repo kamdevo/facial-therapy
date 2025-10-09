@@ -100,6 +100,13 @@ function AppointmentForm({ initial, onSubmit }: { initial?: Partial<Appointment>
 }
 
 export default function Admin() {
+  const requiredKey = (import.meta as any).env?.VITE_ADMIN_KEY as string | undefined;
+  const [auth, setAuth] = useState<boolean>(() => {
+    if (!requiredKey) return true;
+    try { return localStorage.getItem("facialtherapy:admin:auth") === "true"; } catch { return false; }
+  });
+  const [pass, setPass] = useState("");
+
   const all = useAppointments();
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<"all" | AppointmentStatus>("all");
