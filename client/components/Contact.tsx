@@ -36,6 +36,7 @@ export default function Contact() {
     };
     import('@/lib/appointments').then(({ Appointments }) => {
       Appointments.create(payload);
+      toast({ title: 'Solicitud enviada', description: 'Tu cita ha sido registrada. Te contactaremos pronto.' });
     });
     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
