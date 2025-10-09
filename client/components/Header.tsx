@@ -56,6 +56,7 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-teal-600 transition-all duration-300 group-[.active]:w-full"></span>
               </motion.a>
             ))}
+            <Link to="/admin" className="font-poppins font-medium text-foreground/90 hover:text-teal-600 transition-colors">Admin</Link>
           </nav>
 
           {/* CTA Button */}

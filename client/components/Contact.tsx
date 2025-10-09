@@ -24,8 +24,19 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      notes: formData.message,
+      date: (document.getElementById('appt-date') as HTMLInputElement | null)?.value || '',
+      time: (document.getElementById('appt-time') as HTMLInputElement | null)?.value || '',
+    };
+    import('@/lib/appointments').then(({ Appointments }) => {
+      Appointments.create(payload);
+    });
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   const contactInfo = [
