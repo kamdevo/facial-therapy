@@ -91,7 +91,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-3 bg-white/90 backdrop-blur-2xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden"
+            className="lg:hidden mt-3 bg-white/90 backdrop-blur-2 xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden"
           >
             <nav className="p-4 space-y-1">
               {menuItems.map((item, index) => (
