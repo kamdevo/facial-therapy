@@ -103,7 +103,7 @@ export default function Admin() {
   const requiredKey = (import.meta as any).env?.VITE_ADMIN_KEY as string | undefined;
   const [auth, setAuth] = useState<boolean>(() => {
     if (!requiredKey) return true;
-    try { return localStorage.getItem("facialtherapy:admin:auth") === "true"; } catch { return false; }
+    try { return localStorage.getItem("facialtherapy:admin:key") === requiredKey; } catch { return false; }
   });
   const [pass, setPass] = useState("");
 
@@ -147,7 +147,7 @@ export default function Admin() {
           </div>
           <Button onClick={() => {
             if (pass === requiredKey) {
-              localStorage.setItem("facialtherapy:admin:auth", "true");
+              localStorage.setItem("facialtherapy:admin:key", pass);
               setAuth(true);
             } else {
               toast({ title: "Clave incorrecta", description: "Verifica la clave e inténtalo nuevamente." });
