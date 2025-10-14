@@ -54,12 +54,12 @@ export default function InstagramSection() {
 
   // Instagram post URLs - Reemplaza estos con los URLs reales de los posts
   const instagramPosts = [
-    'https://www.instagram.com/p/EJEMPLO1/',
-    'https://www.instagram.com/p/EJEMPLO2/',
-    'https://www.instagram.com/p/EJEMPLO3/',
-    'https://www.instagram.com/p/EJEMPLO4/',
-    'https://www.instagram.com/p/EJEMPLO5/',
-    'https://www.instagram.com/p/EJEMPLO6/',
+    'https://www.instagram.com/reel/DPmjW08DnwV/?igsh=YXlscDZsOXgwYnhk',
+    'https://www.instagram.com/reel/DPWKfrWDp0d/?igsh=czg2YXI3cmE2djd5',
+    'https://www.instagram.com/reel/DPMSEApDl4p/?igsh=djA3a2xwM2Y0cWdn',
+    'https://www.instagram.com/reel/DPFlLSKjkOt/?igsh=MWszYWVtdGd4aXJyNA==',
+    'https://www.instagram.com/reel/DOzOf0NDi7-/?igsh=MWhza2xhZ2o0cTBvOQ==',
+    'https://www.instagram.com/reel/DOiuEdCjuxs/?igsh=dWR6dGVkNGk0aDA0',
   ];
 
   return (

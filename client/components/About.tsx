@@ -30,7 +30,7 @@ export default function About() {
               transition={{ duration: 0.4, delay: 0.05 }}
               className="font-poppins text-teal-600 font-medium text-lg mb-4"
             >
-              Sobre Nosotros
+              🫂 Sobre Nosotros  
             </motion.p>
             
             <motion.h2

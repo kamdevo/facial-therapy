@@ -47,7 +47,7 @@ export default function GoogleMap({ isInView }: GoogleMapProps) {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="font-playfair text-2xl font-bold mb-2">
-              Nuestra Ubicación
+              🗺️ Nuestra Ubicación
             </h3>
             <p className="font-poppins opacity-90">
               Te esperamos en nuestro acogedor spa

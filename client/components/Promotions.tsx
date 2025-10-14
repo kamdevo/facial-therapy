@@ -3,18 +3,20 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { motion, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AspectRatio } from './ui/aspect-ratio';
-
+import imgPromo from '../assets/offer1.jpg'
+import imgPromo2 from '../assets/offer2.jpg'
+import imgPromo3 from '../assets/offer3.jpg'
 const promotions = [
   {
-    src: 'https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2Fb1dc025ad8204b3a9e810fe734ba7c06?format=webp&width=1600',
+    src: imgPromo,
     alt: '30% OFF - Limpieza facial con microdermoabrasión y masaje relajante en espalda',
   },
   {
-    src: 'https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2F0e7e429a0d584814a84f896716e74b14?format=webp&width=1600',
+    src: imgPromo2,
     alt: '15% OFF - Limpieza facial profunda con hidrafacial y cámara hiperbárica',
   },
   {
-    src: 'https://cdn.builder.io/api/v1/image/assets%2F569482bcf7484687b647d2c95efe19e0%2F67ae7229ba794cd2b600803ed0c37dbb?format=webp&width=1600',
+    src: imgPromo3,
     alt: 'Cada tratamiento es una promesa de cuidado personal',
   },
 ];

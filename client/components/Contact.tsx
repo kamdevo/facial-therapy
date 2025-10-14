@@ -60,7 +60,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Horarios",
-      details: ["Lun - Vie: 9:00 AM - 7:00 PM", "Sáb: 9:00 AM - 6:00 PM", "Dom: 10:00 AM - 4:00 PM"]
+      details: ["Lun - Sáb: 9:00 AM - 5:00 PM"]
     }
   ];
 

@@ -4,7 +4,7 @@ import { SparklesText } from './ui/sparkles-text';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-32">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-36 lg:pt-32">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-sand-50 to-teal-50"></div>
       
@@ -108,17 +108,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <button
-                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg shadow-xl transition-all duration-300"
-              >
-                Agenda tu cita ahora
-              </button>
-
-              <button
-                className="border-2 border-sand-300 text-foreground px-8 py-4 rounded-full font-poppins font-semibold text-lg transition-all duration-300"
-              >
-                Ver servicios
-              </button>
+             
             </motion.div>
           </motion.div>
 
