@@ -17,14 +17,57 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/components/ui/use-toast";
-import { Appointments, Appointment, AppointmentStatus } from "@/lib/appointments";
-import { Calendar, CheckCircle2, Clock, ListChecks, Plus, Search, Trash2, User2 } from "lucide-react";
+import {
+  Appointments,
+  Appointment,
+  AppointmentStatus,
+} from "@/lib/appointments";
+import {
+  Calendar,
+  CheckCircle2,
+  Clock,
+  ListChecks,
+  Plus,
+  Search,
+  Trash2,
+  User2,
+} from "lucide-react";
 
 const statusColors: Record<AppointmentStatus, string> = {
   pending: "bg-amber-100 text-amber-800 border-amber-200",
@@ -34,7 +77,14 @@ const statusColors: Record<AppointmentStatus, string> = {
 };
 
 function StatusBadge({ value }: { value: AppointmentStatus }) {
-  return <Badge variant="secondary" className={`border ${statusColors[value]} capitalize`}>{value}</Badge>;
+  return (
+    <Badge
+      variant="secondary"
+      className={`border ${statusColors[value]} capitalize`}
+    >
+      {value}
+    </Badge>
+  );
 }
 
 function useAppointments() {
@@ -43,7 +93,17 @@ function useAppointments() {
   return items;
 }
 
-function AppointmentForm({ initial, onSubmit }: { initial?: Partial<Appointment>; onSubmit: (data: Omit<Appointment, "id" | "createdAt" | "updatedAt" | "status"> & { status?: AppointmentStatus }) => void }) {
+function AppointmentForm({
+  initial,
+  onSubmit,
+}: {
+  initial?: Partial<Appointment>;
+  onSubmit: (
+    data: Omit<Appointment, "id" | "createdAt" | "updatedAt" | "status"> & {
+      status?: AppointmentStatus;
+    },
+  ) => void;
+}) {
   const [form, setForm] = useState({
     name: initial?.name ?? "",
     email: initial?.email ?? "",
@@ -66,31 +126,62 @@ function AppointmentForm({ initial, onSubmit }: { initial?: Partial<Appointment>
     >
       <div>
         <Label>Nombre</Label>
-        <Input value={form.name} onChange={(e) => change("name", e.target.value)} required placeholder="Nombre completo" />
+        <Input
+          value={form.name}
+          onChange={(e) => change("name", e.target.value)}
+          required
+          placeholder="Nombre completo"
+        />
       </div>
       <div>
         <Label>Email</Label>
-        <Input type="email" value={form.email} onChange={(e) => change("email", e.target.value)} required placeholder="correo@correo.com" />
+        <Input
+          type="email"
+          value={form.email}
+          onChange={(e) => change("email", e.target.value)}
+          required
+          placeholder="correo@correo.com"
+        />
       </div>
       <div>
         <Label>Teléfono</Label>
-        <Input value={form.phone} onChange={(e) => change("phone", e.target.value)} placeholder="+57 300 000 0000" />
+        <Input
+          value={form.phone}
+          onChange={(e) => change("phone", e.target.value)}
+          placeholder="+57 300 000 0000"
+        />
       </div>
       <div>
         <Label>Servicio</Label>
-        <Input value={form.service} onChange={(e) => change("service", e.target.value)} placeholder="Servicio" />
+        <Input
+          value={form.service}
+          onChange={(e) => change("service", e.target.value)}
+          placeholder="Servicio"
+        />
       </div>
       <div>
         <Label>Fecha</Label>
-        <Input type="date" value={form.date} onChange={(e) => change("date", e.target.value)} />
+        <Input
+          type="date"
+          value={form.date}
+          onChange={(e) => change("date", e.target.value)}
+        />
       </div>
       <div>
         <Label>Hora</Label>
-        <Input type="time" value={form.time} onChange={(e) => change("time", e.target.value)} />
+        <Input
+          type="time"
+          value={form.time}
+          onChange={(e) => change("time", e.target.value)}
+        />
       </div>
       <div className="md:col-span-2">
         <Label>Notas</Label>
-        <Input value={form.notes} onChange={(e) => change("notes", e.target.value)} placeholder="Notas adicionales" />
+        <Input
+          value={form.notes}
+          onChange={(e) => change("notes", e.target.value)}
+          placeholder="Notas adicionales"
+        />
       </div>
       <div className="md:col-span-2 flex items-center justify-end gap-2 pt-2">
         <Button type="submit">Guardar</Button>
@@ -100,10 +191,16 @@ function AppointmentForm({ initial, onSubmit }: { initial?: Partial<Appointment>
 }
 
 export default function Admin() {
-  const requiredKey = (import.meta as any).env?.VITE_ADMIN_KEY as string | undefined;
+  const requiredKey = (import.meta as any).env?.VITE_ADMIN_KEY as
+    | string
+    | undefined;
   const [auth, setAuth] = useState<boolean>(() => {
     if (!requiredKey) return true;
-    try { return localStorage.getItem("facialtherapy:admin:key") === requiredKey; } catch { return false; }
+    try {
+      return localStorage.getItem("facialtherapy:admin:key") === requiredKey;
+    } catch {
+      return false;
+    }
   });
   const [pass, setPass] = useState("");
 
@@ -116,7 +213,11 @@ export default function Admin() {
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
     return all.filter((a) => {
-      const matchesQ = [a.name, a.email, a.phone, a.service, a.notes].filter(Boolean).join(" ").toLowerCase().includes(q);
+      const matchesQ = [a.name, a.email, a.phone, a.service, a.notes]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(q);
       const matchesS = status === "all" ? true : a.status === status;
       return matchesQ && matchesS;
     });
@@ -139,21 +240,38 @@ export default function Admin() {
         <Card className="w-full max-w-sm p-6 space-y-4">
           <div className="space-y-1">
             <h1 className="text-xl font-semibold">Acceso Admin</h1>
-            <p className="text-sm text-muted-foreground">Ingresa la clave de administrador para continuar.</p>
+            <p className="text-sm text-muted-foreground">
+              Ingresa la clave de administrador para continuar.
+            </p>
           </div>
           <div className="space-y-2">
             <Label>Clave</Label>
-            <Input type="password" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="••••••" />
+            <Input
+              type="password"
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              placeholder="••••••"
+            />
           </div>
-          <Button onClick={() => {
-            if (pass === requiredKey) {
-              localStorage.setItem("facialtherapy:admin:key", pass);
-              setAuth(true);
-            } else {
-              toast({ title: "Clave incorrecta", description: "Verifica la clave e inténtalo nuevamente." });
-            }
-          }} className="w-full">Entrar</Button>
-          <p className="text-xs text-muted-foreground">Configura VITE_ADMIN_KEY para activar esta protección.</p>
+          <Button
+            onClick={() => {
+              if (pass === requiredKey) {
+                localStorage.setItem("facialtherapy:admin:key", pass);
+                setAuth(true);
+              } else {
+                toast({
+                  title: "Clave incorrecta",
+                  description: "Verifica la clave e inténtalo nuevamente.",
+                });
+              }
+            }}
+            className="w-full"
+          >
+            Entrar
+          </Button>
+          <p className="text-xs text-muted-foreground">
+            Configura VITE_ADMIN_KEY para activar esta protección.
+          </p>
         </Card>
       </div>
     );
@@ -184,7 +302,9 @@ export default function Admin() {
           <Separator orientation="vertical" className="mx-2 h-6" />
           <div className="flex items-center gap-3">
             <h1 className="text-xl font-semibold">Dashboard</h1>
-            <Badge variant="secondary" className="hidden sm:inline-flex">Agendamientos</Badge>
+            <Badge variant="secondary" className="hidden sm:inline-flex">
+              Agendamientos
+            </Badge>
           </div>
         </div>
 
@@ -193,17 +313,36 @@ export default function Admin() {
             <div className="flex flex-col md:flex-row md:items-center gap-3">
               <div className="relative flex-1">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar por nombre, email, teléfono o servicio" className="pl-8" />
+                <Input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Buscar por nombre, email, teléfono o servicio"
+                  className="pl-8"
+                />
               </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="capitalize">{status === "all" ? "Todos" : status}</Button>
+                  <Button variant="outline" className="capitalize">
+                    {status === "all" ? "Todos" : status}
+                  </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>Estado</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  {(["all", "pending", "confirmed", "cancelled", "completed"] as const).map((s) => (
-                    <DropdownMenuItem key={s} onClick={() => setStatus(s as any)} className="capitalize">
+                  {(
+                    [
+                      "all",
+                      "pending",
+                      "confirmed",
+                      "cancelled",
+                      "completed",
+                    ] as const
+                  ).map((s) => (
+                    <DropdownMenuItem
+                      key={s}
+                      onClick={() => setStatus(s as any)}
+                      className="capitalize"
+                    >
                       {s}
                     </DropdownMenuItem>
                   ))}
@@ -211,18 +350,27 @@ export default function Admin() {
               </DropdownMenu>
               <Dialog open={openCreate} onOpenChange={setOpenCreate}>
                 <DialogTrigger asChild>
-                  <Button className="gap-2"><Plus className="h-4 w-4" /> Nuevo</Button>
+                  <Button className="gap-2">
+                    <Plus className="h-4 w-4" /> Nuevo
+                  </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[600px]">
                   <DialogHeader>
                     <DialogTitle>Crear agendamiento</DialogTitle>
-                    <DialogDescription>Registrar una nueva cita.</DialogDescription>
+                    <DialogDescription>
+                      Registrar una nueva cita.
+                    </DialogDescription>
                   </DialogHeader>
-                  <AppointmentForm onSubmit={(data) => {
-                    const created = Appointments.create(data);
-                    toast({ title: "Agendamiento creado", description: `${created.name} - ${created.service ?? ""}` });
-                    setOpenCreate(false);
-                  }} />
+                  <AppointmentForm
+                    onSubmit={(data) => {
+                      const created = Appointments.create(data);
+                      toast({
+                        title: "Agendamiento creado",
+                        description: `${created.name} - ${created.service ?? ""}`,
+                      });
+                      setOpenCreate(false);
+                    }}
+                  />
                 </DialogContent>
               </Dialog>
             </div>
@@ -234,7 +382,9 @@ export default function Admin() {
                 <TableRow>
                   <TableHead className="w-12">#</TableHead>
                   <TableHead className="min-w-[160px]">Cliente</TableHead>
-                  <TableHead className="hidden md:table-cell">Contacto</TableHead>
+                  <TableHead className="hidden md:table-cell">
+                    Contacto
+                  </TableHead>
                   <TableHead>Servicio</TableHead>
                   <TableHead className="hidden sm:table-cell">Fecha</TableHead>
                   <TableHead>Estado</TableHead>
@@ -250,46 +400,84 @@ export default function Admin() {
                         <User2 className="h-4 w-4 text-muted-foreground" />
                         <div className="flex flex-col">
                           <span className="font-medium">{a.name}</span>
-                          <span className="text-xs text-muted-foreground md:hidden">{a.email}</span>
+                          <span className="text-xs text-muted-foreground md:hidden">
+                            {a.email}
+                          </span>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
                       <div className="text-sm leading-tight">
                         <div>{a.email}</div>
-                        {a.phone && <div className="text-muted-foreground">{a.phone}</div>}
+                        {a.phone && (
+                          <div className="text-muted-foreground">{a.phone}</div>
+                        )}
                       </div>
                     </TableCell>
-                    <TableCell className="capitalize">{a.service ?? "-"}</TableCell>
+                    <TableCell className="capitalize">
+                      {a.service ?? "-"}
+                    </TableCell>
                     <TableCell className="hidden sm:table-cell">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="h-4 w-4" />
-                        <span>{a.date || "-"}{a.time ? ` ${a.time}` : ""}</span>
+                        <span>
+                          {a.date || "-"}
+                          {a.time ? ` ${a.time}` : ""}
+                        </span>
                       </div>
                     </TableCell>
-                    <TableCell><StatusBadge value={a.status} /></TableCell>
+                    <TableCell>
+                      <StatusBadge value={a.status} />
+                    </TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="sm">Acciones</Button>
+                          <Button variant="ghost" size="sm">
+                            Acciones
+                          </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuLabel>Estado</DropdownMenuLabel>
-                          {(["pending", "confirmed", "completed", "cancelled"] as const).map((s) => (
-                            <DropdownMenuItem key={s} onClick={() => {
-                              Appointments.update(a.id, { status: s });
-                              toast({ title: "Estado actualizado", description: `${a.name} ➜ ${s}` });
-                            }} className="capitalize">
+                          {(
+                            [
+                              "pending",
+                              "confirmed",
+                              "completed",
+                              "cancelled",
+                            ] as const
+                          ).map((s) => (
+                            <DropdownMenuItem
+                              key={s}
+                              onClick={() => {
+                                Appointments.update(a.id, { status: s });
+                                toast({
+                                  title: "Estado actualizado",
+                                  description: `${a.name} ➜ ${s}`,
+                                });
+                              }}
+                              className="capitalize"
+                            >
                               {s}
                             </DropdownMenuItem>
                           ))}
                           <DropdownMenuSeparator />
-                          <DropdownMenuItem onClick={() => setViewing(a)}>Ver detalles</DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => setEditing(a)}>Editar</DropdownMenuItem>
-                          <DropdownMenuItem className="text-rose-600" onClick={() => {
-                            const ok = Appointments.remove(a.id);
-                            if (ok) toast({ title: "Eliminado", description: `${a.name}` });
-                          }}>
+                          <DropdownMenuItem onClick={() => setViewing(a)}>
+                            Ver detalles
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => setEditing(a)}>
+                            Editar
+                          </DropdownMenuItem>
+                          <DropdownMenuItem
+                            className="text-rose-600"
+                            onClick={() => {
+                              const ok = Appointments.remove(a.id);
+                              if (ok)
+                                toast({
+                                  title: "Eliminado",
+                                  description: `${a.name}`,
+                                });
+                            }}
+                          >
                             <Trash2 className="h-4 w-4 mr-2" /> Eliminar
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -299,7 +487,12 @@ export default function Admin() {
                 ))}
                 {paged.length === 0 && (
                   <TableRow>
-                    <TableCell colSpan={7} className="text-center py-10 text-muted-foreground">Sin resultados</TableCell>
+                    <TableCell
+                      colSpan={7}
+                      className="text-center py-10 text-muted-foreground"
+                    >
+                      Sin resultados
+                    </TableCell>
                   </TableRow>
                 )}
               </TableBody>
@@ -308,19 +501,32 @@ export default function Admin() {
           </Card>
 
           <div className="flex items-center justify-between">
-            <div className="text-sm text-muted-foreground">Página {page} de {totalPages}</div>
+            <div className="text-sm text-muted-foreground">
+              Página {page} de {totalPages}
+            </div>
             <Pagination>
               <PaginationContent>
                 <PaginationItem>
-                  <PaginationPrevious onClick={() => setPage((p) => Math.max(1, p - 1))} aria-disabled={page === 1} />
+                  <PaginationPrevious
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    aria-disabled={page === 1}
+                  />
                 </PaginationItem>
                 {Array.from({ length: totalPages }).map((_, i) => (
                   <PaginationItem key={i}>
-                    <PaginationLink isActive={page === i + 1} onClick={() => setPage(i + 1)}>{i + 1}</PaginationLink>
+                    <PaginationLink
+                      isActive={page === i + 1}
+                      onClick={() => setPage(i + 1)}
+                    >
+                      {i + 1}
+                    </PaginationLink>
                   </PaginationItem>
                 ))}
                 <PaginationItem>
-                  <PaginationNext onClick={() => setPage((p) => Math.min(totalPages, p + 1))} aria-disabled={page === totalPages} />
+                  <PaginationNext
+                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                    aria-disabled={page === totalPages}
+                  />
                 </PaginationItem>
               </PaginationContent>
             </Pagination>
@@ -331,14 +537,20 @@ export default function Admin() {
           <DialogContent className="sm:max-w-[600px]">
             <DialogHeader>
               <DialogTitle>Editar agendamiento</DialogTitle>
-              <DialogDescription>Actualizar datos del cliente y cita.</DialogDescription>
+              <DialogDescription>
+                Actualizar datos del cliente y cita.
+              </DialogDescription>
             </DialogHeader>
             {editing && (
               <AppointmentForm
                 initial={editing}
                 onSubmit={(data) => {
                   const updated = Appointments.update(editing.id, data);
-                  if (updated) toast({ title: "Agendamiento actualizado", description: `${updated.name}` });
+                  if (updated)
+                    toast({
+                      title: "Agendamiento actualizado",
+                      description: `${updated.name}`,
+                    });
                   setEditing(null);
                 }}
               />
@@ -350,7 +562,9 @@ export default function Admin() {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Detalles</DialogTitle>
-              <DialogDescription>Información del agendamiento</DialogDescription>
+              <DialogDescription>
+                Información del agendamiento
+              </DialogDescription>
             </DialogHeader>
             {viewing && (
               <div className="space-y-2 text-sm">
@@ -364,21 +578,29 @@ export default function Admin() {
                   <div className="font-medium">Servicio</div>
                   <div>{viewing.service || "-"}</div>
                   <div className="font-medium">Fecha</div>
-                  <div>{viewing.date || "-"} {viewing.time || ""}</div>
+                  <div>
+                    {viewing.date || "-"} {viewing.time || ""}
+                  </div>
                   <div className="font-medium">Estado</div>
                   <div className="capitalize">{viewing.status}</div>
                 </div>
                 <Separator />
                 <div>
                   <div className="font-medium">Notas</div>
-                  <div className="text-muted-foreground">{viewing.notes || "-"}</div>
+                  <div className="text-muted-foreground">
+                    {viewing.notes || "-"}
+                  </div>
                 </div>
                 <Separator />
-                <div className="text-muted-foreground">Creado: {new Date(viewing.createdAt).toLocaleString()}</div>
+                <div className="text-muted-foreground">
+                  Creado: {new Date(viewing.createdAt).toLocaleString()}
+                </div>
               </div>
             )}
             <DialogFooter>
-              <Button variant="outline" onClick={() => setViewing(null)}>Cerrar</Button>
+              <Button variant="outline" onClick={() => setViewing(null)}>
+                Cerrar
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Servicios', href: '#services' },
-    { name: 'Sobre Nosotros', href: '#about' },
-    { name: 'Contacto', href: '#contact' },
+    { name: "Inicio", href: "#hero" },
+    { name: "Servicios", href: "#services" },
+    { name: "Sobre Nosotros", href: "#about" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   return (
@@ -82,7 +82,11 @@ export default function Header() {
         {/* Mobile Navigation */}
         <motion.div
           initial={false}
-          animate={isMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+          animate={
+            isMenuOpen
+              ? { height: "auto", opacity: 1 }
+              : { height: 0, opacity: 0 }
+          }
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden bg-white/80 backdrop-blur-md rounded-b-2xl shadow"
         >
