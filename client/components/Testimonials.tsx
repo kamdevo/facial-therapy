@@ -69,25 +69,25 @@ export default function Testimonials() {
   );
 
   return (
-    <section id="testimonials" ref={ref} className="py-20 bg-gradient-to-b from-cream-50 to-white">
+    <section id="testimonials" ref={ref} className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-cream-50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
         >
-          <p className="font-poppins text-teal-600 font-medium text-lg mb-4">Testimonios</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <p className="font-poppins text-teal-600 font-medium text-sm md:text-base lg:text-lg mb-2 md:mb-4">Testimonios</p>
+          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">
             Voces de nuestras <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">clientas</span>
           </h2>
-          <p className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-poppins text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             Historias reales, resultados reales.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-          <AnimatedList delay={900} className="max-h-[520px]">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <AnimatedList delay={900} className="max-h-[420px] md:max-h-[520px]">
             {testimonials.slice(0, Math.ceil(testimonials.length / 2)).map(Card)}
           </AnimatedList>
           <AnimatedList delay={1100} className="hidden lg:flex max-h-[520px]">

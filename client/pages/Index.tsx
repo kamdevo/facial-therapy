@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Promotions from "../components/Promotions";
 import About from "../components/About";
-import Testimonials from "../components/Testimonials";
 import InstagramSection from "../components/InstagramSection";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -19,7 +18,6 @@ export default function Index() {
         <Promotions />
         <About />
         <InstagramSection />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

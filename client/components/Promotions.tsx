@@ -61,17 +61,17 @@ export default function Promotions() {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section id="promotions" ref={sectionRef} className="py-20 bg-gradient-to-b from-cream-50 to-white">
+    <section id="promotions" ref={sectionRef} className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-cream-50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-10 lg:mb-16"
         >
-          <p className="font-poppins text-teal-600 font-medium text-lg mb-3">Promociones</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-4">Imágenes promocionales</h2>
-          <p className="font-poppins text-muted-foreground max-w-2xl mx-auto">Descubre nuestras ofertas y tratamientos destacados. Desliza para ver más.</p>
+          <p className="font-poppins text-teal-600 font-medium text-sm md:text-base lg:text-lg mb-2 md:mb-3">Promociones</p>
+          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 leading-tight px-2">Imágenes promocionales</h2>
+          <p className="font-poppins text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-2">Descubre nuestras ofertas y tratamientos destacados. Desliza para ver más.</p>
         </motion.div>
 
         <motion.div
@@ -81,10 +81,10 @@ export default function Promotions() {
           className="relative"
         >
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-3 md:gap-4 lg:gap-6">
               {promotions.map((item, index) => (
-                <div className="min-w-0 flex-[0_0_85%] sm:flex-[0_0_70%] md:flex-[0_0_55%] lg:flex-[0_0_45%]" key={index}>
-                  <div className="bg-white rounded-3xl shadow-xl border border-sand-300 overflow-hidden">
+                <div className="min-w-0 flex-[0_0_90%] sm:flex-[0_0_75%] md:flex-[0_0_60%] lg:flex-[0_0_50%]" key={index}>
+                  <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-sand-300 overflow-hidden">
                     <AspectRatio ratio={16 / 9}>
                       <img
                         src={item.src}
@@ -102,26 +102,26 @@ export default function Promotions() {
           <button
             aria-label="Anterior"
             onClick={scrollPrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-10 h-10 rounded-full bg-white/90 shadow-md border border-sand-300 hover:bg-white/100 backdrop-blur"
+            className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 shadow-md border border-sand-300 hover:bg-white/100 backdrop-blur"
           >
-            <ChevronLeft className="text-foreground" size={20} />
+            <ChevronLeft className="text-foreground" size={18} />
           </button>
           <button
             aria-label="Siguiente"
             onClick={scrollNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-10 h-10 rounded-full bg-white/90 shadow-md border border-sand-300 hover:bg-white/100 backdrop-blur"
+            className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 shadow-md border border-sand-300 hover:bg-white/100 backdrop-blur"
           >
-            <ChevronRight className="text-foreground" size={20} />
+            <ChevronRight className="text-foreground" size={18} />
           </button>
 
-          <div className="mt-6 flex items-center justify-center gap-2">
+          <div className="mt-4 md:mt-6 flex items-center justify-center gap-1.5 md:gap-2">
             {promotions.map((_, i) => (
               <button
                 key={i}
                 aria-label={`Ir a slide ${i + 1}`}
                 onClick={() => emblaApi && emblaApi.scrollTo(i)}
-                className={`h-2.5 rounded-full transition-all ${
-                  selectedIndex === i ? 'w-7 bg-teal-500' : 'w-2.5 bg-sand-300'
+                className={`h-2 md:h-2.5 rounded-full transition-all ${
+                  selectedIndex === i ? 'w-6 md:w-7 bg-teal-500' : 'w-2 md:w-2.5 bg-sand-300'
                 }`}
               />
             ))}

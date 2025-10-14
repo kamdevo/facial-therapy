@@ -15,9 +15,9 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" ref={ref} className="py-20 bg-white">
+    <section id="about" ref={ref} className="py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -28,7 +28,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="font-poppins text-teal-600 font-medium text-lg mb-4"
+              className="font-poppins text-teal-600 font-medium text-base md:text-lg mb-3 md:mb-4"
             >
               🫂 Sobre Nosotros  
             </motion.p>
@@ -37,7 +37,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
+              className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight"
             >
               Nuestra pasión es{' '}
               <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
@@ -49,15 +49,15 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 }}
-              className="space-y-4 mb-8"
+              className="space-y-3 md:space-y-4 mb-6 md:mb-8"
             >
-              <p className="font-poppins text-lg text-muted-foreground leading-relaxed">
+              <p className="font-poppins text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 En Facial Therapy, creemos que cada persona merece sentirse bella y confiada en su propia piel. 
                 Fundado con la visión de brindar tratamientos de excelencia, nos especializamos en cuidados 
                 faciales personalizados que respetan la naturaleza única de cada cliente.
               </p>
               
-              <p className="font-poppins text-lg text-muted-foreground leading-relaxed">
+              <p className="font-poppins text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 Nuestro equipo de especialistas certificados combina técnicas tradicionales con las últimas 
                 innovaciones en dermatología estética, garantizando resultados excepcionales en un ambiente 
                 de relajación y bienestar total.
@@ -69,35 +69,35 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-4 mb-8"
+              className="space-y-3 md:space-y-4 mb-6 md:mb-8"
             >
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div className="flex items-start space-x-3 md:space-x-4">
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-0.5 md:mt-1 flex-shrink-0">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-poppins font-semibold text-foreground mb-1">Cuidado Personalizado</h4>
-                  <p className="font-poppins text-muted-foreground">Cada tratamiento se adapta a las necesidades específicas de tu piel.</p>
+                  <h4 className="font-poppins font-semibold text-sm md:text-base text-foreground mb-0.5 md:mb-1">Cuidado Personalizado</h4>
+                  <p className="font-poppins text-xs md:text-sm text-muted-foreground leading-relaxed">Cada tratamiento se adapta a las necesidades específicas de tu piel.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div className="flex items-start space-x-3 md:space-x-4">
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-0.5 md:mt-1 flex-shrink-0">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-poppins font-semibold text-foreground mb-1">Productos Premium</h4>
-                  <p className="font-poppins text-muted-foreground">Utilizamos solo los mejores productos, probados dermatológicamente.</p>
+                  <h4 className="font-poppins font-semibold text-sm md:text-base text-foreground mb-0.5 md:mb-1">Productos Premium</h4>
+                  <p className="font-poppins text-xs md:text-sm text-muted-foreground leading-relaxed">Utilizamos solo los mejores productos, probados dermatológicamente.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div className="flex items-start space-x-3 md:space-x-4">
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center mt-0.5 md:mt-1 flex-shrink-0">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-poppins font-semibold text-foreground mb-1">Ambiente Relajante</h4>
-                  <p className="font-poppins text-muted-foreground">Un espacio diseñado para tu comodidad y tranquilidad absoluta.</p>
+                  <h4 className="font-poppins font-semibold text-sm md:text-base text-foreground mb-0.5 md:mb-1">Ambiente Relajante</h4>
+                  <p className="font-poppins text-xs md:text-sm text-muted-foreground leading-relaxed">Un espacio diseñado para tu comodidad y tranquilidad absoluta.</p>
                 </div>
               </div>
             </motion.div>
@@ -108,7 +108,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.25 }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-poppins font-semibold text-sm md:text-base shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               Conoce nuestro equipo
             </motion.button>

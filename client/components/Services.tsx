@@ -121,7 +121,7 @@ export default function Services() {
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover: transition-all duration-300 border-8 border-nude-200 hover:border-teal-300  h-full group">
+              <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-nude-200 hover:border-teal-300 h-full group">
                 {/* Service Icon */}
                 <motion.div
                   whileHover={{ 
@@ -129,44 +129,44 @@ export default function Services() {
                     scale: 1.1
                   }}
                   transition={{ duration: 0.5 }}
-                  className="w-16 h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-2xl flex items-center justify-center mb-6"
+                  className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6"
                 >
-                  <service.icon size={32} className="text-white" />
+                  <service.icon size={28} className="text-white md:w-8 md:h-8" />
                 </motion.div>
 
                 {/* Service Content */}
-                <h3 className="font-playfair text-2xl font-bold text-foreground mb-4 group-hover:text-teal-600 transition-colors duration-300">
+                <h3 className="font-playfair text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4 group-hover:text-teal-600 transition-colors duration-300 leading-tight">
                   {service.title}
                 </h3>
                 
-                <p className="font-poppins text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                <p className="font-poppins text-sm md:text-base text-muted-foreground mb-4 md:mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center font-poppins text-sm text-foreground">
-                      <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-3"></div>
-                      {feature}
+                    <li key={idx} className="flex items-start font-poppins text-xs md:text-sm text-foreground">
+                      <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 md:mr-3 mt-1.5 flex-shrink-0"></div>
+                      <span className="leading-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Service Details */}
-                <div className="flex items-center justify-between pt-6 border-t border-nude-200">
-                  <div className="flex items-center space-x-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-4 md:pt-6 border-t border-nude-200">
+                  <div className="flex items-center flex-wrap gap-3 md:gap-4">
                     <div className="flex items-center text-muted-foreground">
-                      <Clock size={16} className="mr-2" />
-                      <span className="font-poppins text-sm">{service.duration}</span>
+                      <Clock size={14} className="mr-1.5 md:mr-2 flex-shrink-0" />
+                      <span className="font-poppins text-xs md:text-sm whitespace-nowrap">{service.duration}</span>
                     </div>
                     <div className="flex items-center text-muted-foreground">
-                      <Shield size={16} className="mr-2" />
-                      <span className="font-poppins text-sm">Garantizado</span>
+                      <Shield size={14} className="mr-1.5 md:mr-2 flex-shrink-0" />
+                      <span className="font-poppins text-xs md:text-sm whitespace-nowrap">Garantizado</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="font-playfair text-lg font-bold text-teal-600">
+                  <div className="text-left sm:text-right">
+                    <p className="font-playfair text-base md:text-lg font-bold text-teal-600">
                       {service.price}
                     </p>
                   </div>
@@ -176,7 +176,7 @@ export default function Services() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full mt-6 bg-gradient-to-r from-sand-200 to-cream-200 hover:from-teal-500 hover:to-teal-600 text-foreground hover:text-white py-3 rounded-2xl font-poppins font-medium transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-full mt-4 md:mt-6 bg-gradient-to-r from-sand-200 to-cream-200 hover:from-teal-500 hover:to-teal-600 text-foreground hover:text-white py-2.5 md:py-3 rounded-xl md:rounded-2xl font-poppins font-medium text-sm md:text-base transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   Reservar este tratamiento
                 </motion.button>

@@ -69,7 +69,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="font-poppins text-teal-600 font-medium text-lg mb-4"
+              className="font-poppins text-teal-600 font-medium text-base md:text-lg mb-3 md:mb-4 px-2 md:px-0"
             >
               Bienvenida a tu oasis de belleza
             </motion.p>
@@ -78,10 +78,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="mb-6"
+              className="mb-4 md:mb-6 px-2 md:px-0"
             >
               <SparklesText
-                className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
+                className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
                 colors={{
                   first: "#14b8a6", // teal-500
                   second: "#d4943a", // bronze-500
@@ -96,7 +96,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="font-poppins text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0"
+              className="font-poppins text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 px-2 md:px-0"
             >
               Tratamientos faciales profesionales diseñados para tu bienestar y confianza. 
               Descubre el cuidado que tu piel merece en un ambiente de lujo y tranquilidad.

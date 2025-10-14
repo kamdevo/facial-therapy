@@ -63,30 +63,30 @@ export default function InstagramSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-cream-50" id="instagram" ref={sectionRef}>
+    <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-cream-50" id="instagram" ref={sectionRef}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-100 to-purple-100 px-6 py-2 rounded-full mb-4"
+            className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-100 to-purple-100 px-4 md:px-6 py-1.5 md:py-2 rounded-full mb-3 md:mb-4"
           >
-            <Instagram className="text-pink-600" size={20} />
-            <span className="font-poppins text-pink-600 font-medium">Síguenos en Instagram</span>
+            <Instagram className="text-pink-600 flex-shrink-0" size={18} />
+            <span className="font-poppins text-pink-600 font-medium text-xs md:text-sm lg:text-base">Síguenos en Instagram</span>
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-4"
+            className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 leading-tight px-2"
           >
             Conoce más de{' '}
             <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
@@ -98,7 +98,7 @@ export default function InstagramSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto mb-6"
+            className="font-poppins text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 md:mb-6 px-2"
           >
             Descubre tips de belleza, resultados increíbles y contenido exclusivo en{' '}
             <a 
@@ -108,7 +108,7 @@ export default function InstagramSection() {
               className="text-pink-600 hover:text-pink-700 font-semibold inline-flex items-center gap-1 transition-colors"
             >
               @facialtherapycali
-              <ExternalLink size={16} />
+              <ExternalLink size={14} className="flex-shrink-0" />
             </a>
           </motion.p>
         </motion.div>
@@ -121,13 +121,13 @@ export default function InstagramSection() {
           className="relative"
         >
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4 md:gap-6">
+            <div className="flex gap-3 md:gap-4 lg:gap-6">
               {instagramPosts.map((postUrl, index) => (
                 <div 
                   key={index} 
                   className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%]"
                 >
-                  <div className="bg-white rounded-3xl shadow-lg border border-sand-200 overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
+                  <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg border border-sand-200 overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
                     <blockquote
                       className="instagram-media"
                       data-instgrm-permalink={postUrl}
@@ -157,29 +157,29 @@ export default function InstagramSection() {
           {/* Navigation Buttons */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white/90 backdrop-blur-sm hover:bg-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 border border-sand-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 lg:-translate-x-6 bg-white/90 backdrop-blur-sm hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 border border-sand-200"
             aria-label="Previous"
           >
-            <ChevronLeft className="text-foreground" size={24} />
+            <ChevronLeft className="text-foreground" size={20} />
           </button>
 
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white/90 backdrop-blur-sm hover:bg-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 border border-sand-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 lg:translate-x-6 bg-white/90 backdrop-blur-sm hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 border border-sand-200"
             aria-label="Next"
           >
-            <ChevronRight className="text-foreground" size={24} />
+            <ChevronRight className="text-foreground" size={20} />
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-1.5 md:gap-2 mt-6 md:mt-8">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === selectedIndex
-                    ? 'w-8 h-2 bg-gradient-to-r from-pink-500 to-purple-500'
+                    ? 'w-6 md:w-8 h-2 bg-gradient-to-r from-pink-500 to-purple-500'
                     : 'w-2 h-2 bg-sand-300 hover:bg-sand-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -193,15 +193,15 @@ export default function InstagramSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-12"
+          className="text-center mt-8 md:mt-12"
         >
           <a
             href="https://www.instagram.com/facialtherapycali/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-poppins font-semibold text-sm md:text-base shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
-            <Instagram size={24} />
+            <Instagram size={20} className="flex-shrink-0" />
             <span>Seguir en Instagram</span>
           </a>
         </motion.div>

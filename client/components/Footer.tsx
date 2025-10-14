@@ -40,8 +40,8 @@ export default function Footer() {
 
   return (
     <footer ref={ref} className="bg-gradient-to-b from-cream-50 to-nude-100">
-      <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 lg:px-8 py-10 md:py-12 lg:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -49,27 +49,27 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-1"
           >
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-playfair font-bold text-xl">F</span>
+            <Link to="/" className="flex items-center space-x-2 mb-4 md:mb-6">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-playfair font-bold text-lg md:text-xl">F</span>
               </div>
-              <div>
-                <h2 className="font-playfair font-bold text-2xl text-foreground">
+              <div className="min-w-0">
+                <h2 className="font-playfair font-bold text-xl md:text-2xl text-foreground truncate">
                   Facial Therapy
                 </h2>
-                <p className="text-sm text-muted-foreground font-poppins">
+                <p className="text-xs md:text-sm text-muted-foreground font-poppins">
                   Belleza Natural
                 </p>
               </div>
             </Link>
             
-            <p className="font-poppins text-muted-foreground leading-relaxed mb-6">
+            <p className="font-poppins text-muted-foreground leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
               Dedicados a realzar tu belleza natural con tratamientos profesionales 
               en un ambiente de lujo y tranquilidad.
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 md:space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -78,10 +78,10 @@ export default function Footer() {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
+                  className="w-9 h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 flex-shrink-0"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="text-teal-500" />
+                  <social.icon size={18} className="text-teal-500 md:w-5 md:h-5" />
                 </motion.a>
               ))}
             </div>
@@ -93,15 +93,15 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.05 }}
           >
-            <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
+            <h3 className="font-playfair font-bold text-lg md:text-xl text-foreground mb-4 md:mb-6">
               Enlaces Rápidos
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="font-poppins text-muted-foreground hover:text-teal-600 transition-colors duration-300"
+                    className="font-poppins text-sm md:text-base text-muted-foreground hover:text-teal-600 transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -116,13 +116,13 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
+            <h3 className="font-playfair font-bold text-lg md:text-xl text-foreground mb-4 md:mb-6">
               Nuestros Servicios
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="font-poppins text-muted-foreground">
+                  <span className="font-poppins text-xs md:text-sm text-muted-foreground">
                     {service}
                   </span>
                 </li>
@@ -136,14 +136,14 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <h3 className="font-playfair font-bold text-xl text-foreground mb-6">
+            <h3 className="font-playfair font-bold text-lg md:text-xl text-foreground mb-4 md:mb-6">
               Información de Contacto
             </h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin size={20} className="text-teal-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-poppins text-muted-foreground">
+            <div className="space-y-3 md:space-y-4">
+              <div className="flex items-start space-x-2 md:space-x-3">
+                <MapPin size={18} className="text-teal-500 mt-1 flex-shrink-0 md:w-5 md:h-5" />
+                <div className="min-w-0">
+                  <p className="font-poppins text-xs md:text-sm text-muted-foreground">
                     Avenida 5B #25 Norte-32<br />
                     San Vicente<br />
                     Cali, Colombia
@@ -151,16 +151,16 @@ export default function Footer() {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-teal-500 flex-shrink-0" />
-                <p className="font-poppins text-muted-foreground">
+              <div className="flex items-center space-x-2 md:space-x-3">
+                <Phone size={18} className="text-teal-500 flex-shrink-0 md:w-5 md:h-5" />
+                <p className="font-poppins text-xs md:text-sm text-muted-foreground break-words">
                   +57 305 2962347
                 </p>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-teal-500 flex-shrink-0" />
-                <p className="font-poppins text-muted-foreground">
+              <div className="flex items-center space-x-2 md:space-x-3">
+                <Mail size={18} className="text-teal-500 flex-shrink-0 md:w-5 md:h-5" />
+                <p className="font-poppins text-xs md:text-sm text-muted-foreground break-words">
                   info@facialtherapy.com
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function Footer() {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-poppins font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="mt-4 md:mt-6 w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-full font-poppins font-medium text-sm md:text-base shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Reservar Cita
             </motion.button>
@@ -182,23 +182,23 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-t border-nude-300 mt-12 pt-8"
+          className="border-t border-nude-300 mt-8 md:mt-10 lg:mt-12 pt-6 md:pt-8"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="font-poppins text-muted-foreground text-center md:text-left mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            <p className="font-poppins text-xs md:text-sm text-muted-foreground text-center md:text-left">
               © 2024 Facial Therapy. Todos los derechos reservados.
             </p>
             
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-4 md:space-x-6">
               <a
                 href="#"
-                className="font-poppins text-sm text-muted-foreground hover:text-teal-600 transition-colors"
+                className="font-poppins text-xs md:text-sm text-muted-foreground hover:text-teal-600 transition-colors"
               >
                 Política de Privacidad
               </a>
               <a
                 href="#"
-                className="font-poppins text-sm text-muted-foreground hover:text-teal-600 transition-colors"
+                className="font-poppins text-xs md:text-sm text-muted-foreground hover:text-teal-600 transition-colors"
               >
                 Términos de Servicio
               </a>
@@ -209,11 +209,11 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center justify-center mt-4 text-muted-foreground"
+            className="flex items-center justify-center mt-3 md:mt-4 text-muted-foreground"
           >
-            <span className="font-poppins text-sm mr-2">Hecho con</span>
-            <Heart size={16} className="text-teal-500 fill-current" />
-            <span className="font-poppins text-sm ml-2">para tu belleza</span>
+            <span className="font-poppins text-xs md:text-sm mr-2">Hecho con</span>
+            <Heart size={14} className="text-teal-500 fill-current md:w-4 md:h-4" />
+            <span className="font-poppins text-xs md:text-sm ml-2">para tu belleza</span>
           </motion.div>
         </motion.div>
       </div>
