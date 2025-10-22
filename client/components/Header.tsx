@@ -21,7 +21,7 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-8 pt-4"
     >
       <div className="container mx-auto max-w-7xl">
-        <div className="bg-white/80 backdrop-blur-2xl rounded-2xl md:rounded-3xl shadow-lg border border-sand-200/50 px-4 md:px-6 lg:px-8">
+        <div className="bg-white/60 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-lg border border-sand-200/50 px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <div>
@@ -91,7 +91,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-3 bg-white/90 backdrop-blur-2 xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden"
+            className="lg:hidden mt-3 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden"
           >
             <nav className="p-4 space-y-1">
               {menuItems.map((item, index) => (

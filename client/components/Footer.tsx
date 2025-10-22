@@ -18,7 +18,6 @@ export default function Footer() {
     { name: 'Inicio', href: '#hero' },
     { name: 'Servicios', href: '#services' },
     { name: 'Sobre Nosotros', href: '#about' },
-    { name: 'Testimonios', href: '#testimonials' },
     { name: 'Contacto', href: '#contact' }
   ];
 
