@@ -26,46 +26,26 @@ export default function WhatsAppButton() {
       transition={{ delay: 0.8, duration: 0.4, type: "spring" }}
       className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50"
     >
-      <motion.a
+      <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="relative group"
+        aria-label="Chatear por WhatsApp"
+        className="relative group block"
       >
-        {/* Pulse Animation Background */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.7, 0, 0.7]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute inset-0 bg-green-500 rounded-full"
-        />
-        
         {/* Button */}
-        <div className="relative w-12 h-12 md:w-14 md:h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+        <div className="relative w-12 h-12 md:w-14 md:h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 will-change-transform">
           <WhatsAppIcon size={24} />
         </div>
-        
+
         {/* Tooltip */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileHover={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2 }}
-          className="absolute right-14 md:right-16 top-1/2 transform -translate-y-1/2 bg-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg shadow-lg border border-nude-200 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block"
-        >
+        <div className="absolute right-14 md:right-16 top-1/2 transform -translate-y-1/2 bg-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg shadow-lg border border-nude-200 whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-200 hidden sm:block pointer-events-none">
           <p className="font-poppins text-xs md:text-sm font-medium text-foreground">
             Chatea con nosotros
           </p>
           <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 w-0 h-0 border-l-4 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
-        </motion.div>
-      </motion.a>
+        </div>
+      </a>
     </motion.div>
   );
 }

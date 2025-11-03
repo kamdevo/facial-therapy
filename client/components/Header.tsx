@@ -44,81 +44,64 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              {menuItems.map((item, index) => (
-                <motion.a
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8" aria-label="Navegación principal">
+              {menuItems.map((item) => (
+                <a
                   key={item.name}
                   href={item.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 + 0.1 }}
-                  className="relative font-poppins font-medium text-sm lg:text-base text-foreground/90 hover:text-teal-600 transition-colors duration-300 group"
+                  className="relative font-poppins font-medium text-sm lg:text-base text-foreground/90 hover:text-teal-600 transition-colors duration-300 group focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded-lg px-2 py-1"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
-                </motion.a>
+                </a>
               ))}
             </nav>
 
             {/* CTA Button */}
-            <motion.a
+            <a
               href="#contact"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden lg:block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 py-2.5 lg:px-6 lg:py-3 rounded-full font-poppins font-medium text-sm lg:text-base shadow-lg hover:shadow-xl transition-all duration-300"
+              className="hidden lg:block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 py-2.5 lg:px-6 lg:py-3 rounded-full font-poppins font-medium text-sm lg:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              aria-label="Reservar una cita"
             >
               Reservar Cita
-            </motion.a>
+            </a>
 
             {/* Mobile Menu Button */}
-            <motion.button
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              whileTap={{ scale: 0.95 }}
-              className="lg:hidden p-2 rounded-xl bg-gradient-to-br from-teal-50 to-cream-50 text-foreground hover:from-teal-100 hover:to-cream-100 transition-colors duration-300"
+              className="lg:hidden p-2 rounded-xl bg-gradient-to-br from-teal-50 to-cream-50 text-foreground hover:from-teal-100 hover:to-cream-100 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </motion.button>
+              {isMenuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation - Floating Dropdown */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden mt-3 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden"
-          >
-            <nav className="p-4 space-y-1">
-              {menuItems.map((item, index) => (
-                <motion.a
+          <div className="lg:hidden mt-3 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl border border-sand-200/50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+            <nav className="p-4 space-y-1" aria-label="Menú móvil">
+              {menuItems.map((item) => (
+                <a
                   key={item.name}
                   href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block font-poppins font-medium text-foreground hover:text-teal-600 hover:bg-teal-50/50 transition-all duration-200 py-3 px-4 rounded-xl"
+                  className="block font-poppins font-medium text-foreground hover:text-teal-600 hover:bg-teal-50/50 transition-all duration-200 py-3 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"
                 >
                   {item.name}
-                </motion.a>
+                </a>
               ))}
-              <motion.a
+              <a
                 href="#contact"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-xl font-poppins font-medium shadow-lg mt-3 active:scale-[0.98] transition-transform text-center"
+                className="block w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-xl font-poppins font-medium shadow-lg mt-3 active:scale-[0.98] transition-transform text-center focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                aria-label="Reservar una cita"
               >
                 Reservar Cita
-              </motion.a>
+              </a>
             </nav>
-          </motion.div>
+          </div>
         )}
       </div>
     </motion.header>

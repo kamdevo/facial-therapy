@@ -108,6 +108,7 @@ export default {
         },
       },
       fontFamily: {
+        'arbutus': ['Arbutus Slab', 'serif'],
         'playfair': ['Playfair Display', 'serif'],
         'poppins': ['Poppins', 'sans-serif'],
         'lora': ['Lora', 'serif'],

@@ -53,7 +53,7 @@ export default function Footer() {
                 <span className="text-white font-playfair font-bold text-lg md:text-xl">F</span>
               </div>
               <div className="min-w-0">
-                <h2 className="font-playfair font-bold text-xl md:text-2xl text-foreground truncate">
+                <h2 className="font-arbutus font-bold text-xl md:text-2xl text-foreground truncate">
                   Facial Therapy
                 </h2>
                 <p className="text-xs md:text-sm text-muted-foreground font-poppins">
@@ -73,11 +73,12 @@ export default function Footer() {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-9 h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 flex-shrink-0"
+                  className="w-9 h-9 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                   aria-label={social.label}
                 >
                   <social.icon size={18} className="text-teal-500 md:w-5 md:h-5" />
@@ -166,13 +167,12 @@ export default function Footer() {
             </div>
 
             {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 md:mt-6 w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-full font-poppins font-medium text-sm md:text-base shadow-lg hover:shadow-xl transition-all duration-300"
+            <a
+              href="#contact"
+              className="mt-4 md:mt-6 w-full block text-center bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-full font-poppins font-medium text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
             >
               Reservar Cita
-            </motion.button>
+            </a>
           </motion.div>
         </div>
 

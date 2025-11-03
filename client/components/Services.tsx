@@ -89,7 +89,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6"
+            className="font-arbutus text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
             Tratamientos que{' '}
             <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
@@ -115,24 +115,13 @@ export default function Services() {
               key={service.title}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
+              transition={{ duration: 0.5, delay: Math.min(index * 0.08, 0.4) }}
+              className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-nude-200 hover:border-teal-300 h-full group"
             >
-              <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-nude-200 hover:border-teal-300 h-full group">
-                {/* Service Icon */}
-                <motion.div
-                  whileHover={{ 
-                    rotate: [0, -10, 10, -10, 0],
-                    scale: 1.1
-                  }}
-                  transition={{ duration: 0.5 }}
-                  className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6"
-                >
-                  <service.icon size={28} className="text-white md:w-8 md:h-8" />
-                </motion.div>
+              {/* Service Icon */}
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-110">
+                <service.icon size={28} className="text-white md:w-8 md:h-8" aria-hidden="true" />
+              </div>
 
                 {/* Service Content */}
                 <h3 className="font-playfair text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4 group-hover:text-teal-600 transition-colors duration-300 leading-tight">
@@ -173,14 +162,12 @@ export default function Services() {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full mt-4 md:mt-6 bg-gradient-to-r from-sand-200 to-cream-200 hover:from-teal-500 hover:to-teal-600 text-foreground hover:text-white py-2.5 md:py-3 rounded-xl md:rounded-2xl font-poppins font-medium text-sm md:text-base transition-all duration-300 shadow-sm hover:shadow-md"
+                <button
+                  className="w-full mt-4 md:mt-6 bg-gradient-to-r from-sand-200 to-cream-200 hover:from-teal-500 hover:to-teal-600 text-foreground hover:text-white py-2.5 md:py-3 rounded-xl md:rounded-2xl font-poppins font-medium text-sm md:text-base transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                  aria-label={`Reservar tratamiento de ${service.title}`}
                 >
                   Reservar este tratamiento
-                </motion.button>
-              </div>
+                </button>
             </motion.div>
           ))}
         </div>
@@ -195,11 +182,12 @@ export default function Services() {
           <p className="font-poppins text-muted-foreground mb-6">
             ¿No encuentras lo que buscas? Contáctanos para tratamientos personalizados.
           </p>
-          <motion.button
-            className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl"
+          <a
+            href="#contact"
+            className="inline-block bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-full font-poppins font-semibold shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
           >
             Consulta Personalizada
-          </motion.button>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -97,7 +97,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight"
+            className="font-arbutus text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight"
           >
             Agenda tu{' '}
             <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
@@ -124,7 +124,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 shadow-2xl border border-sand-300"
           >
-            <h3 className="font-playfair text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
+            <h3 className="font-arbutus text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
               Reserva tu cita
             </h3>
             
@@ -229,15 +229,13 @@ export default function Contact() {
                 />
               </div>
               
-              <motion.button
+              <button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white py-3 md:py-4 rounded-xl font-poppins font-semibold text-sm md:text-base lg:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center"
+                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white py-3 md:py-4 rounded-xl font-poppins font-semibold text-sm md:text-base lg:text-lg shadow-xl hover:shadow-2xl hover:scale-102 active:scale-98 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               >
-                <Send size={18} className="mr-2 flex-shrink-0" />
+                <Send size={18} className="mr-2 flex-shrink-0" aria-hidden="true" />
                 Enviar mensaje
-              </motion.button>
+              </button>
             </form>
           </motion.div>
 
@@ -259,7 +257,7 @@ export default function Contact() {
                   className="bg-white rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 shadow-lg border border-sand-300 flex items-start space-x-3 md:space-x-4"
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-teal-500 to-bronze-400 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
-                    <info.icon size={20} className="text-white md:w-6 md:h-6" />
+                    <info.icon size={20} className="text-white md:w-6 md:h-6" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-poppins font-semibold text-foreground text-sm md:text-base lg:text-lg mb-1 md:mb-2">
@@ -286,7 +284,7 @@ export default function Contact() {
           className="mt-10 md:mt-16 lg:mt-20"
         >
           <div className="text-center mb-6 md:mb-8 lg:mb-12 px-2">
-            <h3 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4 leading-tight">
+            <h3 className="font-arbutus text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4 leading-tight">
               Fácil de{' '}
               <span className="bg-gradient-to-r from-teal-500 to-bronze-400 bg-clip-text text-transparent">
                 encontrar
